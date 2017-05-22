@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Page-Enter" content="revealTrans(Duration=1.0,Transition=23)">
+    <title>中杰轮胎销售有限公司</title>
+    <link href="css/base.css" rel="stylesheet" type="text/css" >
+    <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" >
+    <link href="css/iconfont.css" rel="stylesheet" type="text/css" >
+</head>
+
+<body>
+ <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+ <!-- 联系我们 -->
+  <div class="containerone">
+    <div class="main">
+      <!-- 左边内容 -->
+       <div class="side_left">
+         <h3>{$cat_name}</h3>
+         <ul class="side_leftlist">
+          <!-- {foreach from=$article_list item=val} -->
+           <li {if $id eq $val.article_id}class="ona"{/if}><a href="article.php?id={$val.article_id}">{$val.title}</a></li>
+           <!-- {/foreach} -->
+         </ul>
+
+       </div>
+       <!-- 右边内容  -->
+       <div class="content">
+          <div class="titlener"><span>{$article.title}</span></div>
+          <div class="content_main">
+            {$article.content}
+          </div>
+          <!-- <div class="content_main">
+            <img src="images/img19.jpg">
+          </div> -->
+       </div>
+    </div>
+  </div>
+<!-- container end -->
+<!-- footer start -->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+ <!-- footer end -->
+   <!-- js 引用 -->
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        $('.mavbar li').mouseenter(function(){
+           $(this).addClass('on').siblings().removeClass('on');
+        });
+    </script>
+    <script type="text/javascript">
+        $('.side_leftlist li').mouseenter(function(){
+           $(this).addClass('ona').siblings().removeClass('ona');
+        });
+    </script>
+</body>
+</body>
+</html>

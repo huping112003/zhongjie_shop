@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Page-Enter" content="revealTrans(Duration=1.0,Transition=23)">
+<title>我的订单中心</title>
+<link href="css/base.css" rel="stylesheet" type="text/css" >
+<link href="css/member.css" rel="stylesheet" type="text/css" >
+<link href="css/iconfont.css" rel="stylesheet" type="text/css" >
+<style media="screen" type="text/css">
+.my_nala_centre h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 68px;
+    color: #757575;
+}
+.my_nala_centre table {
+    margin: 5px 0 30px 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.my_nala_centre table td,
+.my_nala_centre table th {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    font-size: 14px;
+}
+.my_nala_centre input[type=text],
+.my_nala_centre input[type=password],
+.my_nala_centre textarea {
+    border: 1px solid #ddd;
+    padding: 4px 10px;
+}
+input, textarea, button, select {
+    font-size: 12px;
+    outline: none;
+    resize: none;
+    color: #333;
+}
+
+.btn{
+    display: inline-block;
+    width: 158px;
+    height: 38px;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 38px;
+    text-align: center;
+    cursor: pointer;
+}
+.btn-primary{
+    color: #fff;
+    border-color: #103184;
+    background-color: #103184;
+}
+.my_nala_centre .empty {
+    margin: 40px 0;
+    font-size: 18px;
+    text-align: center;
+    color: #B0B0B0;
+}
+</style>
+</head>
+
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="containerone my_nala_centre ilizi_centre">
+  <div class="main">
+    <!-- 左边内容 -->
+    <!-- #BeginLibraryItem "/library/user_menu.lbi" --><!-- #EndLibraryItem -->
+    <!-- 右边主要内容 -->
+    <div class="mian_center floatright">
+        <!-- {if $action eq 'default'} -->
+        <!-- #BeginLibraryItem "/library/user_index.lbi" --><!-- #EndLibraryItem -->
+        <!-- {/if} -->
+
+        <!-- {if $action eq 'collection_list'} -->
+        <!-- #BeginLibraryItem "/library/user_collection_list.lbi" --><!-- #EndLibraryItem -->
+        <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+        <!-- {/if} -->
+
+        <!-- {if $action eq 'message_list'} -->
+            <!-- #BeginLibraryItem "/library/user_messages.lbi" --><!-- #EndLibraryItem -->
+            <!-- {if $message_list}-->
+            <div>
+                <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+            </div>
+            <!-- {/if} -->
+        <!-- {/if} -->
+    </div>
+  </div>
+</div>
+<!-- container end -->
+<!-- footer start -->
+<div class="footer">
+  <div class="footerguid width1">
+    <div class="main">
+      <ul class="guidlist">
+        <li>
+          <h3>帮助中心</h3>
+          <dl>
+            <dd><a href="#" target="_blank">配送方式</a></dd>
+            <dd><a href="#" target="_blank">支付方式</a></dd>
+            <dd><a href="#" target="_blank">配送指南</a></dd>
+          </dl>
+        </li>
+        <li>
+          <h3>中杰之家</h3>
+          <dl>
+            <dd><a href="#" target="_blank">到店服务</a></dd>
+            <dd><a href="#" target="_blank">服务网点</a></dd>
+            <dd><a href="#" target="_blank">中杰之家</a></dd>
+          </dl>
+        </li>
+        <li>
+          <h3>关于中杰</h3>
+          <dl>
+            <dd><a href="#" target="_blank">集团概况</a></dd>
+            <dd><a href="#" target="_blank">公司构架</a></dd>
+            <dd><a href="#" target="_blank">企业文化</a></dd>
+            <dd><a href="#" target="_blank">发展历程</a></dd>
+            <dd><a href="#" target="_blank">荣誉展示</a></dd>
+          </dl>
+        </li>
+        <li>
+          <h3>订单管理</h3>
+          <dl>
+            <dd><a href="#" target="_blank">购物车</a></dd>
+            <dd><a href="#" target="_blank">订单信息</a></dd>
+          </dl>
+        </li>
+        <li>
+          <h3>官方微信</h3>
+          <dl>
+            <dd><a href="#" target="_blank"><img src="images/img11.jpg"></a></dd>
+          </dl>
+        </li>
+        <li>
+          <h3>销售热线：</h3>
+          <dl>
+            <dd class="bigtel"><a href="#" target="_blank">021-55127112</a></dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="copyright">版权所有:上海中杰轮胎销售有限公司 All Right revesved 　沪ICP备10201694号</div>
+</div>
+<!-- footer end -->
+<!-- js 引用 -->
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/productjs.js"></script>
+<script type="text/javascript">
+        $('.mavbar li').mouseenter(function(){
+           $(this).addClass('on').siblings().removeClass('on');
+        });
+    </script>
+</body>
+</body>
+</html>

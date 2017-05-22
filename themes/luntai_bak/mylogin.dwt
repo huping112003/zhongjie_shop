@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Page-Enter" content="revealTrans(Duration=1.0,Transition=23)">
+<title>我的注册和登录</title>
+<link href="css/base.css" rel="stylesheet">
+<link href="css/member.css"  rel="stylesheet">
+<link href="css/iconfont.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- header start -->
+<div class="headertop">
+  <div class="main">
+    <div class="welcome floatleft">hi 欢迎来到中杰轮胎 &nbsp;&nbsp;&nbsp; <a href="#" target="_blank">登录</a>/<a href="#" target="_blank">注册</a></div>
+    <div class="hilogin floatright"><a href="#" target="_blank">购物车<i class="iconfont">&#xe605;</i></a></div>
+  </div>
+</div>
+<div class="header width1">
+  <div class="main">
+    <div class="logo floatleft"><a href="#" target="_blank"><img src="images/logo.png"></a></div>
+    <div class="headtel floatright">
+      <div> <i class="iconfont">&#xe602;</i></div>
+      <h3>021-55127112</h3>
+    </div>
+  </div>
+</div>
+<div class="navd width1">
+   <div class="main">
+     <ul class="mavbar">
+       <li class="ons"><a href="#">首页</a></li>
+       <li><a href="#">关于中杰</a>
+          <dl class="drop">
+             <dd><a href="#" target="_blank">集团概况</a></dd>
+             <dd><a href="#" target="_blank">公司构架</a></dd>
+             <dd><a href="#" target="_blank">企业文化</a></dd>
+             <dd><a href="#" target="_blank">发展历程</a></dd>
+             <dd><a href="#" target="_blank">荣誉展示</a></dd>
+          </dl>
+       </li>
+       <li><a href="#">购买产品</a>
+          <dl class="drop">
+             <dd><a href="#">卡客车轮胎</a></dd>
+             <dd><a href="#">乘用车轮胎</a></dd>
+          </dl>
+       </li>
+       <li><a href="#">联系中杰</a></li>
+       <li><a href="#">在线留言</a></li>
+     </ul>
+   </div>
+ </div>
+<!-- header end -->
+<div class="containerone">
+  <div class="main">
+    <div class="form_login"> 
+      <!-- 登录区域 -->
+      <div class="loginboxa floatleft">
+        <div class="form_hd clearfix">
+          <div class="trig">没有帐号？<a href="" class="trigger_box">点击注册</a></div>
+          <h2>登录</h2>
+        </div>
+        <div class="form_bd" style="height:auto;">
+          <form action="" method="post" name="loginForm" id="loginForm" onsubmit="">
+            <ul class="form_list clearfix">
+              <li class="text_input"><span class="error_icon"></span><span class="icon icon-user"></span>
+                <input name="username" type="text" class="text" placeholder="用户名">
+              </li>
+              <li class="text_input"><span class="error_icon"></span><span class="icon icon-pwd"></span>
+                <input name="password" type="password" class="text" placeholder="密码">
+              </li>
+              <li class="security_code"> 
+                <input type="text" class="code_input" name="captcha" maxlength="6" value="验证码">
+                 <img src="images/ico13.png">
+              </li>
+              <li class="login_param">
+                <p>
+                  <a class="forget_psd" href="">忘记密码?</a>
+                  <label><input type="checkbox" value="1" name="remember" id="remember" class="remember-me">请保存我这次的登录信息。</label>
+                </p>
+              </li>
+              <li class="last" style="margin-bottom:0;">
+                <input type="submit" name="submit" class="loginbtn" value="登 录">
+              </li>
+              <li class="last">
+                <input type="button" class="loginbtn" value="不打算登录，直接购买" onclick="">
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
+      <!-- 注册区域 -->
+      <div class="loginboxa floatright">
+        <div class="form_hd clearfix">
+          <div class="trig">没有帐号？<a href="" class="trigger_box">点击注册</a></div>
+          <h2>注册</h2>
+        </div>
+        <div class="form_bd" style="height:auto;">
+          <form action="" method="post" name="loginForm" id="loginForm" onsubmit="">
+            <ul class="form_list clearfix">
+              <li class="zhuce">
+                <input name="username" type="text" class="texta" placeholder="用户名">
+              </li>
+              <li class="zhuce">
+                <input name="username" type="text" class="texta" placeholder="email">
+              </li>
+              <li class="zhuce">
+                <input name="username" type="text" class="texta" placeholder="密码">
+              </li>
+              <li class="zhuce">
+                <input name="username" type="text" class="texta" placeholder="确认密码">
+              </li>
+              <li class="security_code"> 
+                <input type="text" class="code_input" name="captcha" maxlength="6" value="验证码">
+                 <img src="images/ico13.png">
+              </li>
+              <li class="login_param">
+                <p>
+                  <a class="forget_psd" href="">忘记密码?</a>
+                  <label><input type="checkbox" value="1" name="remember" id="remember" class="remember-me">我已看过并接受《用户协议》。</label>
+                </p>
+              </li>
+              <li class="last" style="margin-bottom:0;">
+                <input type="submit" name="submit" class="loginbtn" value="注册新用户">
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- container end --> 
+<!-- footer start -->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<!-- footer end --> 
+<!-- js 引用 --> 
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script> 
+<script type="text/javascript" src="js/productjs.js"></script> 
+<script type="text/javascript">
+        $('.mavbar li').mouseenter(function(){
+           $(this).addClass('on').siblings().removeClass('on');
+        });
+    </script>
+</body>
+</body>
+</html>

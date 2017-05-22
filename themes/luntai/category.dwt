@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Page-Enter" content="revealTrans(Duration=1.0,Transition=23)">
+    <title>中杰轮胎销售有限公司</title>
+    <link href="css/base.css" rel="stylesheet" type="text/css" >
+    <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" >
+    <link href="css/iconfont.css" rel="stylesheet" type="text/css" >
+
+</head>
+
+<body>
+    {insert_scripts files='jquery-1.9.1.min.js,jquery.json.js,common.js,global.js,easydialog.min.js,compare.js'}
+    {insert_scripts files='transport_jquery.js,utils.js,jquery.SuperSlide.js,xiaomi_common.js,xiaomi_category.js'}
+ <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+ <!-- 产品分类 -->
+  <div class="containerone">
+    <div class="main">
+    <!--{if $brands.1 || $price_grade.1 || $filter_attr_list}-->
+        <table cellpadding="0" cellspacing="0" class="table-product width1">
+
+            <!--{if $brands.1}-->
+          <tr>
+                <td class="branfont" width="90">{$lang.brand}：</td>
+                <!--{foreach from=$brands item=brand}-->
+                <!-- {if $brand.selected} -->
+                <td class="ppall" width="100"><span>{$brand.brand_name}</span></td>
+                <!-- {/if} -->
+                <!-- {/foreach} -->
+                <td>
+                    <div class="productlist2q">
+                    <!--{foreach from=$brands item=brand}-->
+                    <!-- {if !$brand.selected} -->
+                        <a href="{$brand.url}">{$brand.brand_name}</a></dd>
+                    <!-- {/if} -->
+                    <!-- {/foreach} -->
+                    </div>
+                </td>
+            </tr>
+            <!-- {/if} -->
+
+            <!--{foreach from=$filter_attr_list item=filter_attr}-->
+            <tr>
+                <td class="branfont" width="90">{$filter_attr.filter_attr_name|escape:html}：</td>
+                <!--{foreach from=$filter_attr.attr_list item=attr}-->
+                <!-- {if $attr.selected} -->
+                <td class="ppall"><span>{$attr.attr_value}</span></td>
+                <!-- {/if} -->
+                <!-- {/foreach} -->
+                <td>
+                    <div class="productlist2q">
+                        <!--{foreach from=$filter_attr.attr_list item=attr}-->
+                        <!-- {if !$attr.selected} -->
+                        <a href="{$attr.url}">{$attr.attr_value}</a>
+                        <!-- {/if} -->
+                        <!--{/foreach}-->
+                    </div>
+                </td>
+            </tr>
+            <!-- {/foreach} -->
+
+            <!--{if $price_grade.1}-->
+            <tr>
+                <td class="branfont" width="90">{$lang.price}：</td>
+                <!--{foreach from=$price_grade item=grade}-->
+                <!-- {if $grade.selected} -->
+                <td class="ppall" width="80"><span>{$grade.price_range}</span></dd>
+                <!-- {/if} -->
+                <!-- {/foreach} -->
+                <td>
+                    <div class="productlist2q">
+                        <!--{foreach from=$price_grade item=grade}-->
+                        <!-- {if !$grade.selected} -->
+                        <a href="{$grade.url}">{$grade.price_range}</a>
+                        <!-- {/if} -->
+                        <!-- {/foreach} -->
+                    </div>
+                </td>
+            </tr>
+            <!-- {/if} -->
+        </table>
+        <!-- {/if} -->
+    </div>
+</div>
+<div class="raybg width1">
+    <div class="main">
+        <div class="titlen"><a href="#" target="_blank">首页</a> &gt; <a href="#" target="_blank">购买产品</a>  </div>
+    </div>
+</div>
+  <!-- 产品列表 -->
+  <div class="containerone">
+    <div class="main">
+        <ul class="produc-detail">
+            <!--{foreach from=$goods_list item=goods}-->
+            <!-- {if $goods.goods_id} -->
+            <li>
+                <a href="{$goods.url}" target="_blank">
+                    <div class="proimg"><img src="{$goods.goods_thumb}"></div>
+                    <div class="producfont"><span>{$goods.name}</span></div>
+                </a>
+                <a class="btn-buy J_buyGoods addTocart" href="javascript:addToCart({$goods.goods_id})"></a>
+            </li>
+            <!-- {/if} -->
+            <!-- {/foreach} -->
+       </ul>
+       <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+    </div>
+  </div>
+  <!-- 为你推荐 -->
+<div class="containerone">
+    <div class="main">
+        <div class="recommend-title width1"><span>为你推荐</span></div>
+        <!-- {if $script_name eq 'category'} -->
+        <div class="recommend-wrapper">
+            <ul class="recommend">
+                <!-- {foreach from=$hot_goods item=rs} -->
+                <li>
+                    <a href="{$rs.url}">
+                        <div><img src="{$rs.goods_img}" style="width:100%;"></div>
+                        <p>{$rs.short_name}</p>
+                        <p class="red">1000元</p>
+                    </a>
+                </li>
+                <!-- {/foreach} -->
+            </ul>
+        </div>
+       <!-- {/if} -->
+    </div>
+</div>
+<!-- container end -->
+<div class="add_ok" id="cart_show">
+    <div class="tip">
+        <i class="iconfont"> </i>商品已成功加入购物车
+    </div>
+    <div class="go">
+        <a href="javascript:easyDialog.close();" class="back">&lt;&lt;继续购物</a>
+        <a href="flow.php" class="btn">去结算</a>
+    </div>
+</div>
+<!-- footer start -->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+ <!-- footer end -->
+   <!-- js 引用 -->
+    <script type="text/javascript">
+        $('.mavbar li').mouseenter(function(){
+           $(this).addClass('on').siblings().removeClass('on');
+        });
+    </script>
+</body>
+</body>
+</html>

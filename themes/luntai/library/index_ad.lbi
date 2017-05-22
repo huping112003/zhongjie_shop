@@ -1,0 +1,30 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div id="J_homeSlider" class="xm-slider" style="overflow:hidden;position:relative;">
+	<div class="xm-slider-container" style="min-height:600px;">
+    	<div class="xm-slider-control" style="text-align:center">
+            <!--{foreach from=$index_ad_w item=index_ad}-->
+            <div class="slide xm-slider-slide">
+                <a target="_blank" href="{$index_ad.url}" >
+                    <img src="{$index_ad.src}" />
+                </a>
+            </div>
+            <!--{/foreach}-->
+        </div>
+    </div>
+    <a class="xm-slider-previous xm-slider-navigation icon-slides icon-slides-prev prev" href="javascript:;" style="display:none;">上一张</a>
+	<a class="xm-slider-next xm-slider-navigation icon-slides icon-slides-next next" href="javascript:;" style="display: none;">下一张</a>
+
+</div>
+
+<style>
+    .xm-slider-control {
+        position: relative;
+    }
+    .xm-slider-control img {
+        position: absolute;
+        left: 50%;
+        width: 1920px;
+        margin-left: -980px;
+        min-width: 100%;
+    }
+</style>

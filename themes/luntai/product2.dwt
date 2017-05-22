@@ -1,0 +1,312 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Page-Enter" content="revealTrans(Duration=1.0,Transition=23)">
+    <title>中杰轮胎销售有限公司</title>
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/style.css"  rel="stylesheet">
+    <link href="css/iconfont.css" rel="stylesheet">
+</head>
+
+<body>
+ <!-- header start -->
+ <div class="headertop">
+   <div class="main">
+      <div class="welcome floatleft">hi 欢迎来到中杰轮胎 &nbsp;&nbsp;&nbsp;  <a href="#" target="_blank">登录</a>/<a href="#" target="_blank">注册</a></div>
+      <div class="hilogin floatright"><a href="#" target="_blank">购物车<i class="iconfont">&#xe605;</i></a></div>
+   </div>
+ </div>
+ <div class="header width1">
+   <div class="main">
+      <div class="logo floatleft"><a href="#" target="_blank"><img src="images/logo.png"></a></div>
+      <div class="headtel floatright"> 
+       <div> <i class="iconfont">&#xe602;</i></div>
+        <h3>021-55127112</h3>
+       </div>
+   </div>
+ </div>
+ <div class="navd width1">
+   <div class="main">
+     <ul class="mavbar">
+       <li class="on"><a href="#">首页</a></li>
+       <li><a href="#">关于中杰</a>
+          <dl class="drop">
+             <dd><a href="#" target="_blank">集团概况</a></dd>
+             <dd><a href="#" target="_blank">公司构架</a></dd>
+             <dd><a href="#" target="_blank">企业文化</a></dd>
+             <dd><a href="#" target="_blank">发展历程</a></dd>
+             <dd><a href="#" target="_blank">荣誉展示</a></dd>
+          </dl>
+       </li>
+       <li><a href="#">购买产品</a>
+          <dl class="drop">
+             <dd><a href="#">卡客车轮胎</a></dd>
+             <dd><a href="#">乘用车轮胎</a></dd>
+          </dl>
+       </li>
+       <li><a href="#">联系中杰</a></li>
+       <li><a href="#">在线留言</a></li>
+     </ul>
+   </div>
+ </div>
+ <!-- header end -->
+ <div class="raybg width1"></div>
+ <!-- 产品分类 -->
+  <div class="containerone">
+    <div class="main">
+      <table cellpadding="0" cellspacing="0" class="table-product width1">
+        <tr>
+          <td class="branfont" width="120">品牌：</td>
+          <td class="ppall" width="80"><span>全部</span></td>
+          <td>
+            <div class="productlist2q">
+              <a href="#">普利司通</a>
+              <a href="#">固特异</a>
+              <a href="#">风神</a>
+              <a href="#">优途</a>
+              <a href="#">风迅</a>
+              <a href="#">豫轮</a>
+            </div>           
+          </td>
+        </tr>
+        <tr>
+          <td class="branfont">热搜规格：</td>
+          <td class="ppall"><span>全部</span></td>
+          <td>
+            <div class="productlist2q">
+              <a href="#">12R22.5</a>
+              <a href="#">11R22.5 </a>
+              <a href="#">295/80R22.5 </a>
+              <a href="#">275/70R22.5/a>
+              <a href="#"> 315/80R22.5 </a>
+              <a href="#">9.00R20</a>
+              <a href="#">11.00R20</a>
+              <a href="#">195/60R14</a>
+              <a href="#">12.00R20</a>
+            </div>                   
+          </td>
+        </tr>
+        <tr>
+          <td class="branfont">胎面宽：</td>
+          <td class="ppall"><span>全部</span></td>
+          <td>
+            <div class="productlist2q">
+              <a href="#">8R </a>
+              <a href="#">9R  </a>
+              <a href="#">9.2R</a>
+              <a href="#">9.5R  </a>
+              <a href="#">10R</a>
+              <a href="#">11R</a>
+              <a href="#">12R</a>
+              <a href="#">13R</a>
+              <a href="#">6.50R</a>
+              <a href="#">7.00R </a>
+              <a href="#">7.50R</a>
+              <a href="#">8.25R</a>
+              <a href="#">9.00R</a>
+              <a href="#">10.00R</a>
+              <a href="#">11.00R</a>
+              <a href="#"> 12.00R</a>
+            </div>                                       
+          </td>
+        </tr>
+        <tr>
+          <td class="branfont">胎面宽/扁平比：</td>
+          <td class="ppall"><span>全部</span></td>
+          <td>
+            <div class="productlist2q">
+              <a href="#">235/75R </a>
+              <a href="#">215/75R</a>
+              <a href="#">245/70R</a>
+              <a href="#">255/70R </a>
+              <a href="#">275/70R </a>
+              <a href="#">285/70R</a>
+              <a href="#"> 295/80R </a>
+              <a href="#">295/60R</a>
+              <a href="#">295/80R </a>
+              <a href="#">305/70R</a>
+              <a href="#">315/80R</a>
+              <a href="#">385/65R</a>
+              <a href="#">425/65R</a>
+              <a href="#">445/65R</a>
+            </div>                           
+          </td>
+        </tr>
+        <tr>
+          <td class="branfont">直径：</td>
+          <td class="ppall"><span>全部</span></td>
+          <td>
+            <div class="productlist2q">
+              <a href="#">16  </a>
+              <a href="#">17.5 </a>
+              <a href="#">19.5</a>
+              <a href="#">20</a>
+              <a href="#">22.5</a>
+            </div>         
+          </td>
+        </tr>
+        <tr>
+          <td class="branfont">有内胎：</td>
+          <td class="ppall"><span>全部</span></td>
+          <td>
+            <div class="productlist2q">
+              <a href="#">  TT   </a>
+              <a href="#">  TL</a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="branfont">价格：</td>
+          <td class="ppall"><span>全部</span></td>
+          <td>
+            <div class="productlist2q">
+              <a href="#">0-499</a>
+              <a href="#">500-999 </a>
+              <a href="#"> 1000-1499</a>
+              <a href="#"> 1500-1999</a>
+              <a href="#"> 2000以上</a>
+            </div>             
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="raybg width1">
+    <div class="main">
+       <div class="titlen"><a href="#" target="_blank">首页</a> &gt; <a href="#" target="_blank">购买产品</a>  </div>
+    </div>
+  </div>
+  <!-- 产品列表 -->
+  <div class="containerone">
+    <div class="main">
+       <ul class="produc-detail">
+         <li>
+           <a href="#" target="_blank">
+             <div class="proimg"><img src="images/img12.jpg"></div>
+             <div class="producfont"><span>品牌名称</span><span>型号</span></div> 
+           </a>
+         </li>
+         <li>
+           <a href="#" target="_blank">
+             <div class="proimg"><img src="images/img13.jpg"></div>
+             <div class="producfont"><span>品牌名称</span><span>型号</span></div> 
+           </a>
+         </li>
+         <li>
+           <a href="#" target="_blank">
+             <div class="proimg"><img src="images/img14.jpg"></div>
+             <div class="producfont"><span>品牌名称</span><span>型号</span></div> 
+           </a>
+         </li>
+         <li>
+           <a href="#" target="_blank">
+             <div class="proimg"><img src="images/img12.jpg"></div>
+             <div class="producfont"><span>品牌名称</span><span>型号</span></div> 
+           </a>
+         </li>
+          <li>
+           <a href="#" target="_blank">
+             <div class="proimg"><img src="images/img12.jpg"></div>
+             <div class="producfont"><span>品牌名称</span><span>型号</span></div> 
+           </a>
+         </li>
+         <li>
+           <a href="#" target="_blank">
+             <div class="proimg"><img src="images/img13.jpg"></div>
+             <div class="producfont"><span>品牌名称</span><span>型号</span></div> 
+           </a>
+         </li>
+         <li>
+           <a href="#" target="_blank">
+             <div class="proimg"><img src="images/img14.jpg"></div>
+             <div class="producfont"><span>品牌名称</span><span>型号</span></div> 
+           </a>
+         </li>
+         <li>
+           <a href="#" target="_blank">
+             <div class="proimg"><img src="images/img12.jpg"></div>
+             <div class="producfont"><span>品牌名称</span><span>型号</span></div> 
+           </a>
+         </li>
+          <li>
+           <a href="#" target="_blank">
+             <div class="proimg"><img src="images/img12.jpg"></div>
+             <div class="producfont"><span>品牌名称</span><span>型号</span></div> 
+           </a>
+         </li>
+         <li>
+           <a href="#" target="_blank">
+             <div class="proimg"><img src="images/img13.jpg"></div>
+             <div class="producfont"><span>品牌名称</span><span>型号</span></div> 
+           </a>
+         </li>
+         <li>
+           <a href="#" target="_blank">
+             <div class="proimg"><img src="images/img14.jpg"></div>
+             <div class="producfont"><span>品牌名称</span><span>型号</span></div> 
+           </a>
+         </li>
+         <li>
+           <a href="#" target="_blank">
+             <div class="proimg"><img src="images/img12.jpg"></div>
+             <div class="producfont"><span>品牌名称</span><span>型号</span></div> 
+           </a>
+         </li>
+       </ul>
+    </div>
+  </div>
+  <!-- 为你推荐 -->
+  <div class="containerone">
+    <div class="main">
+       <div class="recommend-title width1"><span>为你推荐</span></div> 
+       <div class="recommend-wrapper">
+         <ul class="recommend">
+           <li>
+             <a href="#">
+              <div><img src="images/img15.png"></div>
+              <p>品牌名称</p>
+              <p class="red">1000元</p>
+             </a>
+           </li>
+           <li>
+             <a href="#">
+              <div><img src="images/img15.png"></div>
+              <p>品牌名称</p>
+              <p class="red">1000元</p>
+             </a>
+           </li>
+           <li>
+             <a href="#">
+              <div><img src="images/img15.png"></div>
+              <p>品牌名称</p>
+              <p class="red">1000元</p>
+             </a>
+           </li>
+           <li>
+             <a href="#">
+              <div><img src="images/img15.png"></div>
+              <p>品牌名称</p>
+              <p class="red">1000元</p>
+             </a>
+           </li>
+         </ul>
+       </div>
+    </div>
+  </div>
+ <!-- container end -->
+<!-- footer start -->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+ <!-- footer end -->
+   <!-- js 引用 -->
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        $('.mavbar li').mouseenter(function(){
+           $(this).addClass('on').siblings().removeClass('on');
+        });
+    </script>
+</body>
+</body>
+</html>

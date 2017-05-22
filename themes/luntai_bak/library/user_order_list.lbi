@@ -1,0 +1,21 @@
+<!-- {if $action eq 'order_list'} -->
+<h1>{$lang.label_order}</h1>
+<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+   <tr align="center">
+     <td bgcolor="#ffffff">{$lang.order_number}</td>
+     <td bgcolor="#ffffff">{$lang.order_addtime}</td>
+     <td bgcolor="#ffffff">{$lang.order_money}</td>
+     <td bgcolor="#ffffff" style="display:none;">{$lang.order_status}</td>
+     <td bgcolor="#ffffff">{$lang.handle}</td>
+   </tr>
+   <!--{foreach from=$orders item=item}-->
+   <tr>
+     <td align="center" bgcolor="#ffffff"><a href="user.php?act=order_detail&order_id={$item.order_id}" class="f6">{$item.order_sn}</a></td>
+     <td align="center" bgcolor="#ffffff">{$item.order_time}</td>
+     <td align="right" bgcolor="#ffffff">{$item.total_fee}元</td>
+     <td align="center" bgcolor="#ffffff" style="display:none;">{$item.order_status}</td>
+     <td align="center" bgcolor="#ffffff"><font class="f6">{$item.handler}</font></td>
+   </tr>
+   <!--{/foreach}-->
+   </table>
+  {/if}

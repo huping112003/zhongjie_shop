@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<meta name="Description" content="{$description}" />
+{if $auto_redirect}
+<meta http-equiv="refresh" content="3;URL={$message.href}" />
+{/if}
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link href="css/base.css" rel="stylesheet" type="text/css" >
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" >
+<link href="css/iconfont.css" rel="stylesheet" type="text/css" >
+<link href="css/skeleton.css" rel="stylesheet" type="text/css" >
+<link href="css/goods.css" rel="stylesheet" type="text/css" >
+<link href="css/pintuer.css" rel="stylesheet" type="text/css" >
+{* 包含脚本文件 *}
+{insert_scripts files='common.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<!-- 在线留言和联系我们 -->
+<div class="containerone">
+    <div class="container">
+        <div class="line">
+            <!-- 在线留言 -->
+            <div class="online xm6">
+                <div class="title titlenone">
+                    <h3>ONLINE MESSAGE</h3>
+                    <p>在线留言</p>
+                </div>
+                <form action="message.php" method="post" name="formMsg" onSubmit="return submitMsgBoard(this)">
+                    <div>
+                        <input type="text" name="msg_type" placeholder="公司：" class="inputa">
+                        <input type="text" name="user_name" placeholder="姓名：" class="inputa">
+                    </div>
+                    <div>
+                        <input type="text" name="msg_title" placeholder="联系方式：" class="inputb">
+                    </div>
+                    <div>
+                        <input type="text" name="user_email" placeholder="邮箱：" class="inputb">
+                    </div>
+                    <div>
+                        <input type="text" name="msg_content" placeholder="留言：" class="inputc">
+                    </div>
+                    <!-- 判断是否启用验证码{if $enabled_mes_captcha} -->
+                    <div>
+                        <input type="text" size="8" name="captcha" placeholder="验证码："  class="inputb" style="width:410px;margin-right:10px;" /><img src="captcha.php?{$rand}" alt="captcha" style="vertical-align: -11px;cursor: pointer;height:33px" onClick="this.src='captcha.php?'+Math.random()" /> </td>
+                    </div>
+                    <!--{/if}-->
+                    <div>
+                        <input type="hidden" name="act" value="act_add_message" />
+                        <input type="submit"  value="提交" class="buttona">
+                    </div>
+                </form>
+            </div>
+            <!-- 联系我们 -->
+            <div class="contact xm6">
+                <div class="title titlenone">
+                    <h3>CONTACT US</h3>
+                    <p>联系我们</p>
+                </div>
+                <ul class="contactlist">
+                    <li><i class="iconfont">&#xe60d;</i>地址：上海市普陀区同普路1220号508室</li>
+                    <li><i class="iconfont">&#xe606;</i>电话：86（21）6998 6162</li>
+                    <li><i class="iconfont">&#xe60c;</i>传真：86（21）6997 0239</li>
+                    <li><i class="iconfont">&#xe607;</i>邮箱：info@zhongjiesh.com</li>
+                    <li><i class="iconfont">&#xe609;</i>http://www.zhongjiesh.com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="msg-board container">
+
+          <script type="text/javascript">
+          {foreach from=$lang.message_board_js item=item key=key}
+          var {$key} = "{$item}";
+          {/foreach}
+          {literal}
+          /**
+           * 提交留言信息
+          */
+          function submitMsgBoard(frm)
+          {
+              var msg = new Object;
+
+               msg.user_email  = frm.elements['user_email'].value;
+               msg.msg_title   = frm.elements['msg_title'].value;
+               msg.msg_content = frm.elements['msg_content'].value;
+               msg.captcha     = frm.elements['captcha'] ? frm.elements['captcha'].value : '';
+
+              var msg_err = '';
+
+              if (msg.user_email.length > 0)
+              {
+                 if (!(Utils.isEmail(msg.user_email)))
+                 {
+                    msg_err += msg_error_email + '\n';
+                  }
+               }
+               else
+               {
+                    msg_err += msg_empty_email + '\n';
+               }
+              if (msg.msg_title.length == 0)
+              {
+                  msg_err += msg_title_empty + '\n';
+              }
+              if (frm.elements['captcha'] && msg.captcha.length==0)
+              {
+                  msg_err += msg_captcha_empty + '\n'
+              }
+              if (msg.msg_content.length == 0)
+              {
+                  msg_err += msg_content_empty + '\n'
+              }
+              if (msg.msg_title.length > 200)
+              {
+                  msg_err += msg_title_limit + '\n';
+              }
+
+              if (msg_err.length > 0)
+              {
+                  alert(msg_err);
+                  return false;
+              }
+              else
+              {
+                  return true;
+              }
+          }
+          {/literal}
+          </script>
+</div>
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --> <!-- #EndLibraryItem -->
+</body>
+</html>

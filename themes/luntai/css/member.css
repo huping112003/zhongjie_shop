@@ -1,0 +1,375 @@
+/* CSS Document */
+/*登录*/
+.login-header{
+	text-align:center;
+	margin:40px 0;
+	}
+.login-header h3{
+	font-size:25px;
+    color: #424242;
+    font-weight: normal;
+    padding-top: 22px;
+	}
+.login_body{
+	width: 358px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+	}
+.loginbox label{
+	margin-bottom:15px;
+	display:block;
+	width:100%;
+	overflow:hidden;
+	}
+.loginbox .logintxt{
+	width: 326px;
+    height: 22px;
+    line-height: 22px;
+    padding: 13px 16px 13px 14px;
+    display: block;
+	border:1px solid #ddd;}
+.loginbox .loginbtn{
+    background-color: #103184;
+	width: 100%;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    margin-bottom: 14px;
+    text-align: center;
+    font-size:14px;
+    color: #fff;
+    cursor: pointer;
+	border:0;
+		}
+.loginbox .loginbtn:hover{
+	opacity:0.8;
+	transition:opacity  linear 1s;}
+.login_link{
+	padding-top: 30px;
+    text-align: center;
+    color: #e0e0e0;
+	}
+.login_link a{
+	font-size:12px;
+	color:#757575;
+	}
+.login_link span{
+	margin:0 15px;
+	}
+.loginbox .logintxt2{
+   width: 170px;
+    height: 22px;
+    line-height: 22px;
+    padding: 13px 16px 13px 14px;
+    display: block;
+	border:1px solid #ddd;
+	float:left;
+		}
+.loginbox span{
+	float:right;
+	margin-right:15px;}
+.login_agree{
+	margin-top: 10px;
+    color: #9d9d9d;
+	font-size:12px;
+	line-height:22px;
+	}
+/*购物车*/
+.cart_goodlist{
+	width:100%;
+
+	}
+.cart_goodlist table{
+	border-top:1px solid #103184;
+	}
+.cart_goodlist table td{
+	vertical-align:middle;
+	font-size:14px;
+	padding:15px 0;
+	border-bottom:1px solid #ccc;
+	text-align:center;
+
+	}
+.cart_goodlist table thead{
+	font-weight:bold;
+	}
+.cart_goodlist .black{
+	font-weight:bold;
+}
+.cart_goodlist .yellow{
+	color:#F00;
+}
+.back_shopping{
+	display:block;
+	float:left;
+	width: 200px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+	webkit-transition: color 0.3s;
+    transition: color 0.3s;
+	background: #b0b0b0;
+    border-color: #b0b0b0;
+    color: #fff;
+	text-align:center;
+	}
+.back_shopping:hover{
+	background:#666;}
+.total_pricea{
+	float:left;
+	font-size:14px;
+	color:#F00;
+	margin-right:30px;
+	}
+#totalSkuPrice{
+	font-size:30px;
+	color:#F00;
+	font-style:normal;
+	}
+.total_pricea em{ font-style:normal;}
+.btn_toail{
+	display:block;
+	float:right;
+	width: 200px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+	webkit-transition: color 0.3s;
+    transition: color 0.3s;
+	background: #103184;
+    border-color: #103184;
+    color: #fff;
+	text-align:center;}
+.cart_bar{
+	margin:40px 0;
+	}
+/*我的登录和注册*/
+.form_login{
+	width:1000px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 15px rgba(204, 204, 204, 0.5);
+    padding:50px;
+    margin: 30px auto 50px;
+	height:auto;
+	overflow: hidden;
+	}
+.form_login .loginboxa{
+    border: 1px solid #ccc;
+    width: 320px;
+    height: 430px;
+    padding: 15px 30px;
+}
+.form_hd{}
+.form_hd .trig{
+	float: right;
+    font-size: 12px;
+    letter-spacing: 0px;
+    margin-top: 5px;
+	color:#333;}
+.form_hd h2{ color:#103184; line-height:25px; font-size:25px; font-weight:normal;}
+.form_hd .trig a {
+    text-decoration: underline;
+}
+.form_list{
+	margin-top:25px;}
+.form_bd .form_list li.text_input {
+    border: 1px solid #ccc;
+    line-height: 18px;
+    padding: 6px;
+    position: relative;
+    zoom: 1;
+}
+.form_list li .icon {
+    display: inline-block;
+    text-align: center;
+    color: #aaa;
+    font-size: 18px;
+    vertical-align: middle;
+    margin: 0 6px;
+    width: 18px;
+    height: 18px;
+}
+.form_list li input.text {
+    width: 240px;
+    padding: 4px 6px;
+    height: 18px;
+    line-height: 18px;
+    overflow: hidden;
+    border: none;
+    border-left: 1px solid #ccc;
+    color: #333;
+    vertical-align: middle;
+    margin-left: 2px;
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    transition: all .25s ease;
+	background:none;
+}
+.form_list li .icon-user {
+    background: url(../images/ico16.png) no-repeat left top;
+}
+.form_list li .icon-pwd {
+    background: url(../images/ico15.png) no-repeat left top;
+}
+.form_list li.input_box .t_text {
+    position: absolute;
+    color: #ccc;
+    left: 14px;
+    top: 10px;
+}
+.code_input{
+	border: 1px solid #ccc;
+	width:150px;
+	height:35px;
+	font-size:12px;
+	color:#aaa;
+	text-indent:15px;
+	background:none;
+	}
+.security_code img{
+	float:right;}
+.login_param{
+	width:100%;
+	margin-bottom:15px;
+	}
+.login_param a{
+	float:right;
+	font-size:12px;
+	color:#103184;
+	line-height:22px;
+	}
+.login_param label{
+	float:left;
+	font-size:12px;
+	line-height:22px;
+	color:#103184;
+	}
+.last .loginbtn{
+    background-color: #103184;
+	width: 100%;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size:14px;
+    color: #fff;
+    cursor: pointer;
+	border:0;
+		}
+.form_list li{
+	width:100%;
+	overflow:hidden;
+	margin-bottom:15px;}
+.texta{
+	border: 1px solid #ccc;
+	width:99%;
+	height:35px;
+	font-size:12px;
+	color:#aaa;
+	text-indent:15px;
+	background:none;}
+/*收货人信息*/
+.aui_title{
+	color: #333;
+    padding-left: 30px;
+    font-size: 22px;
+    padding-bottom: 28px;
+    cursor: move;
+	}
+.consignee{
+}
+.consignee li{
+	margin-bottom:25px;
+	overflow:hidden;
+	width:100%;
+	}
+.consignee li lable{
+	float:left;}
+.consignee li p{
+	display:block;
+	width:200px;
+	float:left;
+	font-size: 16px;
+	color:#333;
+	line-height:40px;
+	}
+.consignee li input{
+	border: 1px solid #ccc;
+	width:388px;
+	height:35px;
+	font-size:12px;
+	color:#aaa;
+	text-indent:15px;
+	background:none;
+	}
+.consignee li p span{
+	font-style: normal;
+    color: #e4210d;
+    padding-right: 3px;
+	}
+.consignee li  .brnts{
+	width:388px;
+	height:45px;
+	font-size:16px;
+	color:#fff;
+	text-indent:15px;
+	background:#103184;
+	cursor:pointer;
+	}
+.input-select{
+	border: 1px solid #ccc;
+	-webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 120px;
+    height: 38px;
+    font-weight: 400;
+    line-height: 38px;
+    white-space: nowrap;
+    overflow: hidden;
+    _zoom: 1;
+    vertical-align: middle;
+    background: none;
+    color: #333;
+    outline: none;
+    cursor: pointer;
+	float:left;
+	margin-right:15px;
+}
+.dropdown{
+	float:left;}
+/*我的会员中心*/
+.side_center{
+	width:235px;
+	border-top:4px solid #103184;
+	padding-top:15px;
+	}
+.side_center li{
+	border-bottom:1px solid #103184;
+	margin-bottom:15px;
+	padding-bottom:15px;
+	text-indent:25px;
+	}
+.side_center li h2{
+	font-size:16px;
+	line-height:25px;
+	margin-bottom:10px;
+	}
+.side_center li dd{
+	font-size:14px;
+	line-height:30px;
+	cursor:pointer;
+}
+.side_center li dd a{
+	color:#333;
+}
+.side_center li dd:hover{
+	background:#999;
+}
+.side_center li dd:hover a{
+	color:#fff;
+}
+.mian_center{
+	width:920px;
+}

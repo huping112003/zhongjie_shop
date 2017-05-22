@@ -1,0 +1,76 @@
+<style media="screen" type="text/css">
+.portal-main {
+    padding-top: 24px;
+}
+.user-card {
+    position: relative;
+    float: left;
+    width: 250px;
+    height: 160px;
+    padding-left: 180px;
+    padding-top: 40px;
+}
+.user-card .username {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 400;
+    color: #616161;
+}
+.user-card .tip {
+    margin: 0 0 10px;
+    color: #B0B0B0;
+}
+.user-card .link {
+    font-size: 12px;
+    color: #103184;
+}
+.user-card .avatar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 4px;
+    border: 1px solid #E0E0E0;
+    border-radius: 150px;
+    width: 150px;
+    height: 150px;
+}
+.user-actions {
+    float: right;
+    width: 378px;
+    margin-top: 35px;
+}
+.user-actions .action-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    color: #757575;
+}
+.user-actions .action-list li {
+    position: relative;
+    padding: 6px 0;
+}
+.user-actions .action-list li.rank span {
+    color: #bbb;
+    margin-left: 10px;
+    font-size: 12px;
+}
+</style>
+   <div class="portal-main clearfix">
+       <div class="user-card">
+           <h2 class="username">{$info.username}</h2>
+           <p class="tip">{$lang.welcome_to} {$info.shop_name} ~</p>
+           <a class="link" href="user.php?act=profile">{$lang.modify}{$lang.profile}></a>
+           <img class="avatar" src="images/photo.jpg" />
+       </div>
+       <div class="user-actions">
+           <ul class="action-list">
+               <li> {$lang.last_time}：{$info.last_time}</li>
+               <li class="rank">{$rank_name}</li>
+               <!--{if 0} $info.is_validate eq 0-->
+               <li class="validat">{$lang.not_validated} <a href="javascript:sendHashMail()" style="color:#103184;">{$lang.resend_hash_mail}</a></li>
+               <!--{elseif 0}$info.is_validate eq 1 -->
+               <li class="validat">邮箱验证：已验证<span>{$info.email}</span></li>
+               <!--{/if} -->
+           </ul>
+       </div>
+    </div>

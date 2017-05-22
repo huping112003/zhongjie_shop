@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Page-Enter" content="revealTrans(Duration=1.0,Transition=23)">
+    <title>中杰轮胎销售有限公司</title>
+    <link href="css/base.css" rel="stylesheet" type="text/css" >
+    <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" >
+    <link href="css/iconfont.css" rel="stylesheet" type="text/css" >
+    <link href="css/skeleton.css" rel="stylesheet" type="text/css" >
+    <link href="css/pintuer.css" rel="stylesheet" type="text/css" >
+    <link href="css/flexslider.css" rel="stylesheet" type="text/css" >
+    {insert_scripts files='luntai/jquery-1.8.3.min.js,luntai/jquery.easing.1.3.js,luntai/pintuer.js'}
+
+    {insert_scripts files='common.js,index.js'}
+</head>
+
+<body>
+    {insert_scripts files='xiaomi_index.js,jquery.SuperSlide.js'}
+ <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+ <!-- banner -->
+            <!--首页轮播 strat-->
+            <!-- #BeginLibraryItem "/library/index_ad.lbi" --><!-- #EndLibraryItem --> 
+            <!--首页轮播 end-->
+<!-- container start -->
+<div class="containerone width1">
+    <div class="container">
+        <ul class="brandlist line">
+            <li class="x3 xm6">
+                <a href="#" target="_blank">
+                    <div class="brandimg"><img src="images/img1.jpg" class="img-responsive"></div>
+                    <div class="brandlogo"><img src="images/ico4.png" class="img-responsive"></div>
+                </a>
+                <div class="change"><p><i class="iconfont">&#xe600;</i></p></div>
+            </li>
+            <li class="x3 xm6">
+                <a href="#" target="_blank">
+                    <div class="brandimg"><img src="images/img2.jpg" class="img-responsive"></div>
+                    <div class="brandlogo"><img src="images/ico5.png" class="img-responsive"></div>
+                </a>
+                <div class="change"><p><i class="iconfont">&#xe600;</i></p></div>
+            </li>
+            <li class="x3 xm6">
+                <a href="#" target="_blank">
+                    <div class="brandimg"><img src="images/img3.jpg" class="img-responsive"></div>
+                    <div class="brandlogo"><img src="images/ico6.png" class="img-responsive"></div>
+                </a>
+                <div class="change"><p><i class="iconfont">&#xe600;</i></p></div>
+            </li>
+            <li class="x3 xm6">
+                <a href="#" target="_blank">
+                    <div class="brandimg"><img src="images/img4.jpg" class="img-responsive"></div>
+                    <div class="brandlogo"><img src="images/ico7.png" class="img-responsive"></div>
+                </a>
+                <div class="change"><p><i class="iconfont">&#xe600;</i></p></div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<!-- TemplateBeginEditable name="商品区域" -->
+<!-- #BeginLibraryItem "/library/recommend_hot.lbi" -->
+<!-- {if $hot_goods} -->
+<div class="containertwo width1">
+    <div class="container">
+    <!-- 标题 -->
+        <div class="title width1">
+            <h3>HOT PRODUCTS</h3>
+            <p>热卖产品</p>
+        </div>
+        <!-- 产品 -->
+        <ul class="productlist line">
+            <!-- {foreach from=$hot_goods item=goods} -->
+            <li class="x3 xm6">
+                <a href="{$goods.url}" target="_blank">
+                    <div class="productimg"><img src="{$goods.goods_img}" class="img-responsive"></div>
+                    <div class="productlogo"><span>中杰轮胎</span></div>
+                    <h3 style="text-align:center; margin-top:15px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">{$goods.short_name}</h3>
+                </a>
+            </li>
+            <!-- {/foreach} -->
+        </ul>
+    </div>
+</div>
+<!-- {/if} -->
+
+
+
+<!-- <li class="x3 xm6">
+    <a href="#" target="_blank">
+     <div class="productimg"><img src="images/img5.jpg" class="img-responsive"></div>
+     <div class="productlogo"><span>普利司通轮胎</span></div>
+     <div class="dropproduct">
+       <h3>中杰轮胎</h3>
+       <P>普利司通轮胎</P>
+     </div>
+    </a>
+</li> -->
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+
+<!-- 公司简介 -->
+<!-- {if $company_article} -->
+<div class="containerone">
+    <div class="container">
+        <!-- 标题 -->
+        <div class="title">
+            <h3>COMPANY PROFLIE</h3>
+            <p>{$company_article.title}</p>
+        </div>
+        <!-- 新闻 -->
+        <div class="line">
+            <div class="xm6">
+                <p style="text-indent:20px; text-overflow: -o-ellipsis-lastline;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;"> {$company_article.content}</p>
+                <p class="more"><a href="article.php?id={$company_article.article_id}" target="_blank">查看更多</a></p>
+            </div>
+            <div class="xm6 congmy"><img src="images/ico8.png" class="img-responsive"></div>
+        </div>
+    </div>
+</div>
+<!-- {/if} -->
+
+
+<!-- TemplateBeginEditable name="文章区域" -->
+<!-- #BeginLibraryItem "/library/cat_articles.lbi" -->
+
+<!-- {if $articles_cat} -->
+<div class="containertwo">
+    <div class="container">
+    <!-- 标题 -->
+        <div class="title">
+            <h3>ARTICLE NEWS</h3>
+            <p>{$articles_cat.name}</p>
+        </div>
+        <!-- 新闻 -->
+        <div class="company2 x6 xm6">
+            <ul class="comnews">
+                <!-- {foreach from=$articles item=val name=foo} -->
+                <!-- {if $smarty.foreach.foo.index < 3} -->
+                <li><i class="iconfont">&#xe60b;</i><a href="{$val.url}" target="_blank">{$val.short_title}</a></li>
+                <!-- {/if} -->
+                <!-- {/foreach} -->
+            </ul>
+            <p class="more"><a href="{$articles_cat.url}" target="_blank">查看更多</a></p>
+        </div>
+        <div class="news2 xs6 xm6">
+            <ul>
+                <!-- {foreach from=$articles item=rs name=new_act} -->
+                <!-- {if $smarty.foreach.new_act.index > 2} -->
+                <li>
+                    <a href="{$rs.url}" target="_blank">
+                        <div class="newsimg"><img src="{$rs.file_url}" class="img-responsive"></div>
+                        <div class="newsfont">
+                            <p class="date">{$rs.add_time}</p>
+                            <p>{$rs.short_title}</p>
+                        </div>
+                    </a>
+                </li>
+                <!-- {/if} -->
+                <!-- {/foreach} -->
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- {/if} -->
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+
+
+
+<!-- 在线留言和联系我们 -->
+<div class="containerone">
+    <div class="container">
+        <div class="line">
+            <!-- 在线留言 -->
+            <div class="online xm6">
+                <div class="title titlenone">
+                    <h3>ONLINE MESSAGE</h3>
+                    <p>在线留言</p>
+                </div>
+                <form action="message.php" method="post" name="formMsg" onSubmit="return submitMsgBoard(this)">
+                    <div>
+                        <input type="text" name="msg_type" placeholder="公司：" class="inputa">
+                        <input type="text" name="user_name" placeholder="姓名：" class="inputa">
+                    </div>
+                    <div>
+                        <input type="text" name="msg_title" placeholder="联系方式：" class="inputb">
+                    </div>
+                    <div>
+                        <input type="text" name="user_email" placeholder="邮箱：" class="inputb">
+                    </div>
+                    <div>
+                        <input type="text" name="msg_content" placeholder="留言：" class="inputc">
+                    </div>
+                    <!-- 判断是否启用验证码{if $enabled_mes_captcha} -->
+                    <div>
+                        <input type="text" size="8" name="captcha" placeholder="验证码："  class="inputb" style="width:410px;margin-right:10px;" /><img src="captcha.php?{$rand}" alt="captcha" style="vertical-align: -11px;cursor: pointer;height:33px" onClick="this.src='captcha.php?'+Math.random()" /> </td>
+                    </div>
+                    <!--{/if}-->
+                    <div>
+                        <input type="hidden" name="act" value="act_add_message" />
+                        <input type="submit"  value="提交" class="buttona">
+                    </div>
+                </form>
+            </div>
+            <!-- 联系我们 -->
+            <div class="contact xm6">
+                <div class="title titlenone">
+                    <h3>CONTACT US</h3>
+                    <p>联系我们</p>
+                </div>
+                <ul class="contactlist">
+                    <li><i class="iconfont">&#xe60d;</i>地址：上海市普陀区同普路1220号508室</li>
+                    <li><i class="iconfont">&#xe606;</i>电话：86（21）6998 6162</li>
+                    <li><i class="iconfont">&#xe60c;</i>传真：86（21）6997 0239</li>
+                    <li><i class="iconfont">&#xe607;</i>邮箱：info@zhongjiesh.com</li>
+                    <li><i class="iconfont">&#xe609;</i>http://www.zhongjiesh.com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+{foreach from=$lang.message_board_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+{literal}
+/**
+ * 提交留言信息
+*/
+function submitMsgBoard(frm)
+{
+    var msg = new Object;
+
+     msg.user_email  = frm.elements['user_email'].value;
+     msg.msg_title   = frm.elements['msg_title'].value;
+     msg.msg_content = frm.elements['msg_content'].value;
+     msg.captcha     = frm.elements['captcha'] ? frm.elements['captcha'].value : '';
+
+    var msg_err = '';
+
+    if (msg.user_email.length > 0)
+    {
+       if (!(Utils.isEmail(msg.user_email)))
+       {
+          msg_err += msg_error_email + '\n';
+        }
+     }
+     else
+     {
+          msg_err += msg_empty_email + '\n';
+     }
+    if (msg.msg_title.length == 0)
+    {
+        msg_err += msg_title_empty + '\n';
+    }
+    if (frm.elements['captcha'] && msg.captcha.length==0)
+    {
+        msg_err += msg_captcha_empty + '\n'
+    }
+    if (msg.msg_content.length == 0)
+    {
+        msg_err += msg_content_empty + '\n'
+    }
+    if (msg.msg_title.length > 200)
+    {
+        msg_err += msg_title_limit + '\n';
+    }
+
+    if (msg_err.length > 0)
+    {
+        alert(msg_err);
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
+{/literal}
+</script>
+ <!-- container end -->
+ <!-- footer start -->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</body>
+</html>

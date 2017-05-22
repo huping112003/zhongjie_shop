@@ -1,0 +1,359 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Page-Enter" content="revealTrans(Duration=1.0,Transition=23)">
+    <title>中杰轮胎销售有限公司</title>
+    <link href="css/base.css" rel="stylesheet" type="text/css" >
+    <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" >
+    <link href="css/iconfont.css" rel="stylesheet" type="text/css" >
+
+</head>
+
+<body>
+ <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+ <!-- 产品分类 -->
+  <div class="containerone">
+    <div class="main">
+    <!--{if $brands.1 || $price_grade.1 || $filter_attr_list}-->
+        <table cellpadding="0" cellspacing="0" class="table-product width1">
+            <!--{foreach from=$filter_attr_list item=filter_attr}-->
+            <tr>
+                <td class="branfont" width="90">{$filter_attr.filter_attr_name|escape:html}：</td>
+                <!--{foreach from=$filter_attr.attr_list item=attr}-->
+                <!-- {if $attr.selected} -->
+                <td class="ppall"><span>{$attr.attr_value}</span></td>
+                <!-- {/if} -->
+                <!-- {/foreach} -->
+                <td>
+                    <div class="productlist2q">
+                        <!--{foreach from=$filter_attr.attr_list item=attr}-->
+                        <!-- {if !$attr.selected} -->
+                        <a href="{$attr.url}">{$attr.attr_value}</a>
+                        <!-- {/if} -->
+                        <!--{/foreach}-->
+                    </div>
+                </td>
+            </tr>
+            <!-- {/foreach} -->
+
+            <!--{if $brands.1}-->
+        	<tr>
+                <td class="branfont" width="90">{$lang.brand}：</td>
+                <!--{foreach from=$brands item=brand}-->
+                <!-- {if $brand.selected} -->
+                <td class="ppall" width="100"><span>{$brand.brand_name}</span></td>
+                <!-- {/if} -->
+                <!-- {/foreach} -->
+                <td>
+                    <div class="productlist2q">
+                    <!--{foreach from=$brands item=brand}-->
+                    <!-- {if !$brand.selected} -->
+                        <a href="{$brand.url}">{$brand.brand_name}</a></dd>
+                    <!-- {/if} -->
+                    <!-- {/foreach} -->
+                    </div>
+                </td>
+            </tr>
+            <!-- {/if} -->
+
+            <!--{if $price_grade.1}-->
+            <tr>
+                <td class="branfont" width="90">{$lang.price}：</td>
+                <!--{foreach from=$price_grade item=grade}-->
+                <!-- {if $grade.selected} -->
+                <td class="ppall" width="80"><span>{$grade.price_range}</span></dd>
+                <!-- {/if} -->
+                <!-- {/foreach} -->
+                <td>
+                    <div class="productlist2q">
+                        <!--{foreach from=$price_grade item=grade}-->
+                        <!-- {if !$grade.selected} -->
+                        <a href="{$grade.url}">{$grade.price_range}</a>
+                        <!-- {/if} -->
+                        <!-- {/foreach} -->
+                    </div>
+                </td>
+            </tr>
+            <!-- {/if} -->
+        </table>
+        <!-- {/if} -->
+    </div>
+</div>
+<div class="raybg width1">
+    <div class="main">
+        <div class="titlen"><a href="#" target="_blank">首页</a> &gt; <a href="#" target="_blank">购买产品</a>  </div>
+    </div>
+</div>
+  <!-- 产品列表 -->
+  <div class="containerone">
+    <div class="main">
+        <ul class="produc-detail">
+            <!--{foreach from=$goods_list item=goods}-->
+            <!-- {if $goods.goods_id} -->
+            <li>
+                <a href="{$goods.url}" target="_blank">
+                    <div class="proimg"><img src="{$goods.goods_thumb}"></div>
+                    <div class="producfont"><span>{$goods.name}</span></div>
+                </a>
+            </li>
+            <!-- {/if} -->
+            <!-- {/foreach} -->
+       </ul>
+    </div>
+  </div>
+  <!-- 为你推荐 -->
+<div class="containerone">
+    <div class="main">
+        <div class="recommend-title width1"><span>为你推荐</span></div>
+        <!-- {if $script_name eq 'category'} -->
+        <div class="recommend-wrapper">
+            <ul class="recommend">
+                <!-- {foreach from=$hot_goods item=rs} -->
+                <li>
+                    <a href="{$rs.url}">
+                        <div><img src="{$rs.goods_img}" style="width:100%;"></div>
+                        <p>{$rs.short_name}</p>
+                        <p class="red">1000元</p>
+                    </a>
+                </li>
+                <!-- {/foreach} -->
+            </ul>
+        </div>
+       <!-- {/if} -->
+    </div>
+</div>
+<!-- container end -->
+<!-- footer start -->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+ <!-- footer end -->
+   <!-- js 引用 -->
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        $('.mavbar li').mouseenter(function(){
+           $(this).addClass('on').siblings().removeClass('on');
+        });
+    </script>
+</body>
+</body>
+</html>
+
+
+
+<!--
+<tr>
+  <td class="branfont">热搜规格：</td>
+  <td class="ppall"><span>全部</span></td>
+  <td>
+    <div class="productlist2q">
+      <a href="#">95/65R15</a>
+      <a href="#">205/55R16 </a>
+      <a href="#">195/55R15</a>
+      <a href="#">185/60R14</a>
+      <a href="#">195/60R15</a>
+      <a href="#">215/70R15</a>
+      <a href="#">185/65R14</a>
+      <a href="#">195/60R14</a>
+      <a href="#">175/65R14</a>
+      <a href="#">215/55R16</a>
+      <a href="#">185/65R15</a>
+      <a href="#">215/0R16</a>
+      <a href="#">205/65R15</a>
+      <a href="#">225/60R16</a>
+      <a href="#">205/50R16</a>
+      <a href="#">205/60R15</a>
+      <a href="#">215/65R16</a>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td class="branfont">胎面宽：</td>
+  <td class="ppall"><span>全部</span></td>
+  <td>
+    <div class="productlist2q">
+      <a href="#">155</a>
+      <a href="#">165  </a>
+      <a href="#">175</a>
+      <a href="#">185</a>
+      <a href="#">195</a>
+      <a href="#">205</a>
+      <a href="#">215</a>
+      <a href="#">225</a>
+      <a href="#">235</a>
+      <a href="#">245</a>
+      <a href="#">255</a>
+      <a href="#">265</a>
+      <a href="#">275</a>
+      <a href="#">285</a>
+      <a href="#">295</a>
+      <a href="#">305</a>
+      <a href="#">385</a>
+      <a href="#">445</a>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td class="branfont">扁平化：</td>
+  <td class="ppall"><span>全部</span></td>
+  <td>
+    <div class="productlist2q">
+      <a href="#">15</a>
+      <a href="#">25</a>
+      <a href="#">30</a>
+      <a href="#">35</a>
+      <a href="#">40</a>
+      <a href="#">45</a>
+      <a href="#">50 </a>
+      <a href="#">55</a>
+      <a href="#">60</a>
+      <a href="#">65</a>
+      <a href="#">70</a>
+      <a href="#">75</a>
+      <a href="#">80</a>
+      <a href="#">85</a>
+      <a href="#"> N/A</a>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td class="branfont">直径：</td>
+  <td class="ppall"><span>全部</span></td>
+  <td>
+    <div class="productlist2q">
+      <a href="#">11 </a>
+      <a href="#">12</a>
+      <a href="#">12C</a>
+      <a href="#">13</a>
+      <a href="#"> 13C </a>
+      <a href="#"> 13LT  </a>
+      <a href="#"> 14</a>
+      <a href="#">14C</a>
+      <a href="#">15</a>
+      <a href="#">15C </a>
+      <a href="#">16</a>
+      <a href="#">16C</a>
+      <a href="#">17</a>
+      <a href="#">18</a>
+      <a href="#">19</a>
+      <a href="#">20</a>
+      <a href="#">21 </a>
+      <a href="#">22</a>
+      <a href="#">23</a>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td class="branfont">速度级别：</td>
+  <td class="ppall"><span>全部</span></td>
+  <td>
+    <div class="productlist2q">
+      <a href="#">G</a>
+      <a href="#">H </a>
+      <a href="#">L</a>
+      <a href="#">M</a>
+      <a href="#">N</a>
+      <a href="#">P</a>
+      <a href="#">Q</a>
+      <a href="#"> R</a>
+      <a href="#">S</a>
+      <a href="#">T</a>
+      <a href="#"> T/H</a>
+      <a href="#">V </a>
+      <a href="#">V/H</a>
+      <a href="#">W</a>
+      <a href="#">Y</a>
+      <a href="#">Z</a>
+      <a href="#">ZR</a>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td class="branfont">防爆：</td>
+  <td class="ppall"><span>全部</span></td>
+  <td>
+    <div class="productlist2q">
+      <a href="#">防爆</a>
+      <a href="#">不防爆</a>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td class="branfont">价格：</td>
+  <td class="ppall"><span>全部</span></td>
+  <td>
+    <div class="productlist2q">
+      <a href="#">0-199</a>
+      <a href="#">200-499 </a>
+      <a href="#"> 500-799 </a>
+      <a href="#">800-999 </a>
+      <a href="#">1000-1499 </a>
+      <a href="#">1500-1999</a>
+      <a href="#">2000以上</a>
+    </div>
+  </td>
+</tr> -->
+
+<!--  商品列表  -->
+
+<!-- <li>
+  <a href="#" target="_blank">
+    <div class="proimg"><img src="images/img14.jpg"></div>
+    <div class="producfont"><span>品牌名称</span><span>型号</span></div>
+  </a>
+</li>
+<li>
+  <a href="#" target="_blank">
+    <div class="proimg"><img src="images/img12.jpg"></div>
+    <div class="producfont"><span>品牌名称</span><span>型号</span></div>
+  </a>
+</li>
+ <li>
+  <a href="#" target="_blank">
+    <div class="proimg"><img src="images/img12.jpg"></div>
+    <div class="producfont"><span>品牌名称</span><span>型号</span></div>
+  </a>
+</li>
+<li>
+  <a href="#" target="_blank">
+    <div class="proimg"><img src="images/img13.jpg"></div>
+    <div class="producfont"><span>品牌名称</span><span>型号</span></div>
+  </a>
+</li>
+<li>
+  <a href="#" target="_blank">
+    <div class="proimg"><img src="images/img14.jpg"></div>
+    <div class="producfont"><span>品牌名称</span><span>型号</span></div>
+  </a>
+</li>
+<li>
+  <a href="#" target="_blank">
+    <div class="proimg"><img src="images/img12.jpg"></div>
+    <div class="producfont"><span>品牌名称</span><span>型号</span></div>
+  </a>
+</li>
+ <li>
+  <a href="#" target="_blank">
+    <div class="proimg"><img src="images/img12.jpg"></div>
+    <div class="producfont"><span>品牌名称</span><span>型号</span></div>
+  </a>
+</li>
+<li>
+  <a href="#" target="_blank">
+    <div class="proimg"><img src="images/img13.jpg"></div>
+    <div class="producfont"><span>品牌名称</span><span>型号</span></div>
+  </a>
+</li>
+<li>
+  <a href="#" target="_blank">
+    <div class="proimg"><img src="images/img14.jpg"></div>
+    <div class="producfont"><span>品牌名称</span><span>型号</span></div>
+  </a>
+</li>
+<li>
+  <a href="#" target="_blank">
+    <div class="proimg"><img src="images/img12.jpg"></div>
+    <div class="producfont"><span>品牌名称</span><span>型号</span></div>
+  </a>
+</li> -->

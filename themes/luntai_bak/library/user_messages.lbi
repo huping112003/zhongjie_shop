@@ -1,0 +1,66 @@
+<h1>{$lang.label_message}</h1>
+<style type="text/css">
+.message-box table {
+    border-bottom: 1px solid #e0e0e0;
+}
+.my_nala_centre table {
+    margin: 5px 0 30px 0;
+}
+.message-box table td, .message-box table th {
+    border: 0 none;
+}
+.my_nala_centre table td, .my_nala_centre table th {
+    padding: 10px;
+    font-size: 14px;
+}
+.message-box .title b {
+    display: inline-block;
+    padding: 5px 10px;
+    border:1px solid #103184;
+    color: #103184;
+    margin-right: 10px;
+}
+.message-box .title h3 {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.message-box h3 {
+    display: inline;
+}
+.boxCenterList h3 {
+    padding-left: 20px;
+}
+.message-box .msg_content {
+    padding: 10px 45px;
+    font-size: 16px;
+}
+</style>
+<!-- {if $message_list} -->
+    <!--{foreach from=$message_list item=message key=key} -->
+    <div class="message-box">
+        <table width="100%">
+            <tr>
+                <td>
+                    <div class="title"><b>{$message.msg_type}</b><h3>{$message.msg_title}</h3><span class="msg_time">{$message.msg_time}</span></div>
+                    <div class="msg_content">{$message.msg_content}</div>
+                    <!-- {if $message.message_img} 如果上传了图片-->
+                        <a class="msg_file" href="data/feedbackimg/{$message.message_img}" target="_bank">{$lang.view_upload_file}</a>
+                    <!-- {/if} -->
+                    <!-- {if $message.re_msg_content} -->
+                    <div class="reply">
+                        <a href="mailto:{$message.re_user_email}" class="f6">{$lang.shopman_reply}</a> {$message.re_msg_time}<br />
+                        {$message.re_msg_content}
+                    </div>
+                    <!-- {/if} -->
+                </td>
+                <td width="200" align="center">
+                    <a href="user.php?act=del_msg&amp;id={$key}&amp;order_id={$message.order_id}" title="{$lang.drop}" onclick="if (!confirm('{$lang.confirm_remove_msg}')) return false;" class="f6">{$lang.drop}</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- {/foreach} -->
+<!-- {else} -->
+<p class="empty">没有记录</p>
+<!-- {/if} -->

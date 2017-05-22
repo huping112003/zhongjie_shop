@@ -1,0 +1,80 @@
+{insert_scripts files='utils.js'}
+<script type="text/javascript">
+ {foreach from=$lang.profile_js item=item key=key}
+   var {$key} = "{$item}";
+ {/foreach}
+</script>
+<h1>{$lang.profile}</h1>
+<form name="formEdit" action="user.php" method="post" onSubmit="return userEdit()">
+<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+       <tr>
+         <td width="28%" align="right" bgcolor="#FFFFFF">{$lang.birthday}： </td>
+         <td width="72%" align="left" bgcolor="#FFFFFF"> {html_select_date field_order=YMD prefix=birthday start_year=-60 end_year=+1 display_days=true month_format=%m day_value_format=%02d time=$profile.birthday} </td>
+       </tr>
+       <tr>
+         <td width="28%" align="right" bgcolor="#FFFFFF">{$lang.sex}： </td>
+         <td width="72%" align="left" bgcolor="#FFFFFF"><input type="radio" name="sex" value="0" {if $profile.sex==0}checked="checked"{/if} />
+           {$lang.secrecy}&nbsp;&nbsp;
+           <input type="radio" name="sex" value="1" {if $profile.sex==1}checked="checked"{/if} />
+           {$lang.male}&nbsp;&nbsp;
+           <input type="radio" name="sex" value="2" {if $profile.sex==2}checked="checked"{/if} />
+         {$lang.female}&nbsp;&nbsp; </td>
+       </tr>
+       <tr>
+         <td width="28%" align="right" bgcolor="#FFFFFF">{$lang.email}： </td>
+         <td width="72%" align="left" bgcolor="#FFFFFF"><input name="email" type="text" value="{$profile.email}" size="25" class="inputBg" /><span style="color:#FF0000"> *</span></td>
+       </tr>
+{foreach from=$extend_info_list item=field}
+<!-- {if $field.id eq 6} -->
+<tr>
+ <td width="28%" align="right" bgcolor="#FFFFFF">{$lang.passwd_question}：</td>
+ <td width="72%" align="left" bgcolor="#FFFFFF">
+ <select name='sel_question'>
+ <option value='0'>{$lang.sel_question}</option>
+ {html_options options=$passwd_questions selected=$profile.passwd_question}
+ </select>
+ </td>
+</tr>
+<tr>
+ <td width="28%" align="right" bgcolor="#FFFFFF" <!-- {if $field.is_need} -->id="passwd_quesetion"<!--{/if}-->>{$lang.passwd_answer}：</td>
+ <td width="72%" align="left" bgcolor="#FFFFFF">
+ <input name="passwd_answer" type="text" size="25" class="inputBg" maxlengt='20' value="{$profile.passwd_answer}"/><!-- {if $field.is_need} --><span style="color:#FF0000"> *</span><!-- {/if} -->
+ </td>
+</tr>
+<!-- {else} -->
+<tr>
+   <td width="28%" align="right" bgcolor="#FFFFFF" <!-- {if $field.is_need} -->id="extend_field{$field.id}i"<!--{/if}-->>{$field.reg_field_name}：</td>
+   <td width="72%" align="left" bgcolor="#FFFFFF">
+   <input name="extend_field{$field.id}" type="text" class="inputBg" value="{$field.content}"/><!-- {if $field.is_need} --><span style="color:#FF0000"> *</span><!-- {/if} -->
+   </td>
+</tr>
+<!-- {/if} -->
+{/foreach}
+       <tr>
+         <td colspan="2" align="center" bgcolor="#FFFFFF"><input name="act" type="hidden" value="act_edit_profile" />
+           <input name="submit" type="submit" value="{$lang.confirm_edit}" class="btn btn-primary" style="border:none;" />
+         </td>
+       </tr>
+</table>
+</form>
+<form name="formPassword" action="user.php" method="post" onSubmit="return editPassword()" >
+<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+<tr>
+ <td width="28%" align="right" bgcolor="#FFFFFF">{$lang.old_password}：</td>
+ <td width="76%" align="left" bgcolor="#FFFFFF"><input name="old_password" type="password" size="25"  class="inputBg" /></td>
+</tr>
+<tr>
+ <td width="28%" align="right" bgcolor="#FFFFFF">{$lang.new_password}：</td>
+ <td align="left" bgcolor="#FFFFFF"><input name="new_password" type="password" size="25"  class="inputBg" /></td>
+</tr>
+<tr>
+ <td width="28%" align="right" bgcolor="#FFFFFF">{$lang.confirm_password}：</td>
+ <td align="left" bgcolor="#FFFFFF"><input name="comfirm_password" type="password" size="25"  class="inputBg" /></td>
+</tr>
+<tr>
+ <td colspan="2" align="center" bgcolor="#FFFFFF"><input name="act" type="hidden" value="act_edit_password" />
+   <input name="submit" type="submit" class="btn btn-primary" style="border:none;" value="{$lang.confirm_edit}" />
+ </td>
+</tr>
+</table>
+</form>

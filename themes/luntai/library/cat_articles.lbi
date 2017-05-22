@@ -1,0 +1,40 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $articles_cat} -->
+<div class="containertwo">
+    <div class="container">
+    <!-- 标题 -->
+        <div class="title">
+            <h3>ARTICLE NEWS</h3>
+            <p>{$articles_cat.name}</p>
+        </div>
+        <!-- 新闻 -->
+        <div class="company2 x6 xm6">
+            <ul class="comnews">
+                <!-- {foreach from=$articles item=val name=foo} -->
+                <!-- {if $smarty.foreach.foo.index < 3} -->
+                <li><i class="iconfont">&#xe60b;</i><a href="{$val.url}" target="_blank">{$val.short_title}</a></li>
+                <!-- {/if} -->
+                <!-- {/foreach} -->
+            </ul>
+            <p class="more"><a href="{$articles_cat.url}" target="_blank">查看更多</a></p>
+        </div>
+        <div class="news2 xs6 xm6">
+            <ul>
+                <!-- {foreach from=$articles item=rs name=new_act} -->
+                <!-- {if $smarty.foreach.new_act.index > 2} -->
+                <li>
+                    <a href="{$rs.url}" target="_blank">
+                        <div class="newsimg"><img src="{$rs.file_url}" class="img-responsive"></div>
+                        <div class="newsfont">
+                            <p class="date">{$rs.add_time}</p>
+                            <p>{$rs.short_title}</p>
+                        </div>
+                    </a>
+                </li>
+                <!-- {/if} -->
+                <!-- {/foreach} -->
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- {/if} -->

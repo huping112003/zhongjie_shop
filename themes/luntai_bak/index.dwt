@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Page-Enter" content="revealTrans(Duration=1.0,Transition=23)">
+    <title>中杰轮胎销售有限公司</title>
+    <link href="css/base.css" rel="stylesheet" type="text/css" >
+    <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" >
+    <link href="css/iconfont.css" rel="stylesheet" type="text/css" >
+    <link href="css/skeleton.css" rel="stylesheet" type="text/css" >
+    <link href="css/pintuer.css" rel="stylesheet" type="text/css" >
+    <link href="css/flexslider.css" rel="stylesheet" type="text/css" >
+    {insert_scripts files='luntai/jquery-1.8.3.min.js,luntai/jquery.easing.1.3.js,luntai/pintuer.js'}
+
+    {insert_scripts files='common.js,index.js'}
+</head>
+
+<body>
+{insert_scripts files='xiaomi_index.js,jquery.SuperSlide.js'}
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/index_ad.lbi" --><!-- #EndLibraryItem --> 
+
+<!-- main1 -->
+    <div class="cub-main main1">
+        <div class="info">
+            <div class="search"><input type="text"></div>
+            <div class="kefu">
+                <a href=""></a>
+                <a href=""></a>
+            </div>
+            <div class="brand_list">
+                <a href="category.php?id=0&brand=1"></a>
+                <a href="category.php?id=0&brand=4"></a>
+                <a href="category.php?id=0&brand=2"></a>
+                <a class="last" href="category.php?id=0&brand=3"></a>
+                <a class="last" href="category.php?id=0&brand=5"></a>
+            </div>
+        </div>
+    </div>
+    <div class="cub-main main2">
+        <div class="info">
+            
+        </div>
+    </div>
+    <div class="cub-main main3">
+        <div class="info">
+            
+        </div>
+    </div>
+    <div class="cub-main main4">
+        <div class="info">
+            
+        </div>
+    </div>
+    <div class="cub-main main5">
+        <div class="info">
+            
+        </div>
+    </div>
+
+
+
+ <!-- footer start -->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</body>
+</html>

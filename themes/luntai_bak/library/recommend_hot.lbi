@@ -1,0 +1,36 @@
+<!-- {if $hot_goods} -->
+<div class="containertwo width1">
+    <div class="container">
+    <!-- 标题 -->
+        <div class="title width1">
+            <h3>HOT PRODUCTS</h3>
+            <p>热卖产品</p>
+        </div>
+        <!-- 产品 -->
+        <ul class="productlist line">
+            <!-- {foreach from=$hot_goods item=goods} -->
+            <li class="x3 xm6">
+                <a href="{$goods.url}" target="_blank">
+                    <div class="productimg"><img src="{$goods.goods_img}" class="img-responsive"></div>
+                    <div class="productlogo"><span>中杰轮胎</span></div>
+                    <h3 style="text-align:center; margin-top:15px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">{$goods.short_name}</h3>
+                </a>
+            </li>
+            <!-- {/foreach} -->
+        </ul>
+    </div>
+</div>
+<!-- {/if} -->
+
+
+
+<!-- <li class="x3 xm6">
+    <a href="#" target="_blank">
+     <div class="productimg"><img src="images/img5.jpg" class="img-responsive"></div>
+     <div class="productlogo"><span>普利司通轮胎</span></div>
+     <div class="dropproduct">
+       <h3>中杰轮胎</h3>
+       <P>普利司通轮胎</P>
+     </div>
+    </a>
+</li> -->

@@ -1,0 +1,192 @@
+/* CSS Document */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+	font-family:"微软雅黑";
+	background:#ebeef5;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+a{
+	text-decoration:none;
+	}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*the same*/
+.main {
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.floatleft {
+	float: left;
+}
+.floatright {
+	float: right;
+}
+.width1 {
+	width: 100%;
+}
+/*header*/
+.headertop {
+	width: 100%;
+	height: 35px;
+	background: #cccccc;
+	line-height: 35px;
+}
+.welcome {
+	color: #333;
+	font-size: 12px;
+	font-family: "å¾®è½¯é›…é»‘";
+}
+.welcome a, .hilogin a {
+	color: #103184;
+	font-size: 12px;
+}
+.header {
+	min-height: 107px;
+}
+.logo {
+	margin-top: 15px;
+}
+.headtel {
+	color: #333;
+	text-align: center;
+	margin-top: 15px;
+	margin-right: -25px;
+}
+.headtel h3 {
+	font-weight: normal;
+	line-height: 35px;
+	font-size: 24px;
+}
+.headtel i {
+	font-size: 35px;
+}
+/*.navd {
+	background: #103184;
+	height: 50px;
+}
+.mavbar {
+	width: 100%;
+}
+.mavbar li {
+	width: 180px;
+	float: left;
+	font-size: 16px;
+	line-height: 50px;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+}
+.mavbar li a {
+	color: #fff;
+}
+.mavbar li dl {
+	display: none;
+	z-index: 11;
+}
+.mavbar li dl dd {
+	font-size: 14px;
+	font-weight: normal;
+	padding:0;
+}
+.mavbar li:hover dl {
+	display: block;
+	position: absolute;
+	background: #103184;
+	width: 100%;
+}
+.mavbar li dl dd:hover {
+	background: #0f2e70;
+}
+.on {
+	background: #0f2e70;
+	font-weight: bold;
+}*/
+/*footer*/
+/*.footer {
+	background: #103184;
+}*/
+.copyright {
+	background: #062470;
+	line-height: 32px;
+	color: #9198b3;
+	text-align: center;
+	font-size: 12px;
+}
+.footerguid {
+	padding: 55px 0;
+	overflow: hidden;
+}
+.guidlist li {
+	width: 193px;
+	float: left;
+}
+.guidlist li h3 {
+	font-size: 16px;
+	color: #fff;
+	margin-bottom: 15px;
+}
+.guidlist li dd {
+	font-size: 14px;
+	color: #fff;
+	line-height: 27px;
+	padding:0;
+}
+.guidlist li dd a {
+	color: #fff;
+}
+.guidlist li .bigtel {
+	font-size: 24px;
+}
+.guidlist li dd a:hover {
+	text-decoration: underline;
+}
+.containerone {
+	margin: 50px 0 75px;
+	overflow: hidden;
+}

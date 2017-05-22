@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+  ol li a{
+	  font-size:14px;
+	  line-height:25px;
+	  color:#333;
+	  }
+</style>
+</head>
+
+<body>
+<ol>
+  <li><a href="index.html" target="_blank">index</a></li>
+  <li><a href="login.html" target="_blank">登录</a></li>
+  <li><a href="order.html" target="_blank">订单详情</a></li>
+  <li><a href="product.html" target="_blank">产品列表</a></li>
+  <li><a href="product2.html" target="_blank">产品列表2</a></li>
+  <li><a href="registered.html" target="_blank">注册</a></li>
+  <li><a href="mycart.html" target="_blank">我的购物车</a></li>
+  <li><a href="mylogin.html" target="_blank">我的注册和登录</a></li>
+  
+  <li><a href="consignee.html" target="_blank">我的收货信息</a></li>
+  <li><a href="mycenter.html" target="_blank">我的会员中心</a></li>
+  
+  <li><a href="contact.html" target="_blank">联系我们</a></li>
+  <li><a href="about.html" target="_blank">关于我们</a></li>
+</ol>
+</body>
+</html>

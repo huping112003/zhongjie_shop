@@ -1,0 +1,57 @@
+
+ <div class="headertop">
+   <div class="main">
+    <?php 
+$k = array (
+  'name' => 'member_info',
+);
+echo $this->_echash . $k['name'] . '|' . serialize($k) . $this->_echash;
+?>
+      <div class="hilogin floatright"><a href="flow.php" target="_blank">购物车<i class="iconfont">&#xe605;</i></a></div>
+   </div>
+ </div>
+ <div class="header width1">
+   <div class="main">
+      <div class="logo floatleft"><a href="index.php" target="_blank"><img src="themes/luntai/images/logo.png"></a></div>
+      <div class="headtel floatright">
+       <div> <i class="iconfont">&#xe602;</i></div>
+        <h3>021-69970653转0</h3>
+       </div>
+   </div>
+ </div>
+ <div class="navd width1">
+   <div class="main">
+     <ul class="mavbar">
+      <li class="ons"><a href="index.php">&nbsp;</a></li>
+      <li>
+        <a href="category.php?id=1">&nbsp;</a>
+        <dl class="drop">
+           <dd><a href="category.php?id=1">卡客车轮胎</a></dd>
+           <dd><a href="category.php?id=2">乘用车轮胎</a></dd>
+        </dl>
+      </li>
+      <li>
+        <a href="article.php?id=57">&nbsp;</a>
+        <dl class="drop">
+           <dd><a href="article.php?id=57">中杰简介</a></dd>
+           <dd><a href="article.php?id=58">发展历程</a></dd>
+           <dd><a href="article.php?id=59">合作品牌</a></dd>
+           <dd><a href="article.php?id=60">企业文化</a></dd>
+        </dl>
+      </li>
+
+      <li>
+        <a href="index.php?act=jiangtang">&nbsp;</a>
+        <dl class="drop">
+           <dd><a href="article.php?id=67">行业动态</a></dd>
+           <dd><a href="article.php?id=68">中杰新闻</a></dd>
+           <dd><a href="article.php?id=69">经销商指南</a></dd>
+        </dl>
+      </li>
+      <li><a href="article.php?id=71">&nbsp;</a></li>
+      <li><a href="category.php?id=8">&nbsp;</a></li>
+      <li><a href="user.php">&nbsp;</a></li>
+     </ul>
+   </div>
+ </div>
+ 
