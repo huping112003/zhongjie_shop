@@ -768,7 +768,7 @@ elseif ($_REQUEST['step'] == 'checkout')
     /*
      * 计算订单的费用
      */
-    print_r($cart_goods);
+   // print_r($cart_goods);
     $total = order_fee($order, $cart_goods, $consignee);
 
     $smarty->assign('total', $total);
