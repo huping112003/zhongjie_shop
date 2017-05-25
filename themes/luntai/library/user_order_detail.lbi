@@ -62,9 +62,9 @@
     <th width="23%" align="center" bgcolor="#ffffff">{$lang.goods_name}</th>
     <th width="29%" align="center" bgcolor="#ffffff">{$lang.goods_attr}</th>
     <!--<th>{$lang.market_price}</th>-->
-    <th width="26%" align="center" bgcolor="#ffffff">{$lang.goods_price}<!-- {if $order.extension_code eq "group_buy"} -->{$lang.gb_deposit}<!-- {/if} --></th>
+    <th width="20%" align="center" bgcolor="#ffffff">{$lang.goods_price}<!-- {if $order.extension_code eq "group_buy"} -->{$lang.gb_deposit}<!-- {/if} --></th>
     <th width="9%" align="center" bgcolor="#ffffff">{$lang.number}</th>
-    <th width="20%" align="center" bgcolor="#ffffff">{$lang.subtotal}</th>
+    <th width="26%" align="center" bgcolor="#ffffff">{$lang.subtotal}</th>
   </tr>
   <!-- {foreach from=$goods_list item=goods} -->
   <tr>
@@ -93,7 +93,10 @@
   </tr>
   <!-- {/foreach} -->
   <tr>
-    <td colspan="8" bgcolor="#ffffff" align="right">
+  <td colspan="4" bgcolor="#ffffff" align="right">
+      {$lang.goods_number}: {$goods_number}
+      </td>
+    <td bgcolor="#ffffff" align="right">
     {$lang.shopping_money}<!-- {if $order.extension_code eq "group_buy"} -->{$lang.gb_deposit}<!-- {/if} -->: {$order.formated_goods_amount}
     </td>
   </tr>

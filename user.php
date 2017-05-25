@@ -1046,11 +1046,14 @@ elseif ($action == 'order_detail')
 
     /* 订单商品 */
     $goods_list = order_goods($order_id);
+    $goods_number = 0;
     foreach ($goods_list AS $key => $value)
     {
         $goods_list[$key]['market_price'] = price_format($value['market_price'], false);
         $goods_list[$key]['goods_price']  = price_format($value['goods_price'], false);
         $goods_list[$key]['subtotal']     = price_format($value['subtotal'], false);
+        $goods_number = $goods_number + $value['goods_number'];
+
     }
 
      /* 设置能否修改使用余额数 */
@@ -1090,9 +1093,10 @@ elseif ($action == 'order_detail')
     $order['order_status'] = $_LANG['os'][$order['order_status']];
     $order['pay_status'] = $_LANG['ps'][$order['pay_status']];
     $order['shipping_status'] = $_LANG['ss'][$order['shipping_status']];
-
+    //print_r($goods_list);
     $smarty->assign('order',      $order);
     $smarty->assign('goods_list', $goods_list);
+    $smarty->assign('goods_number', $goods_number);
     $smarty->display('user_transaction.dwt');
 }
 

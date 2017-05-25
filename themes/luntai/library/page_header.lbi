@@ -1,4 +1,36 @@
 <!-- header start -->
+<style>
+    .header-search{
+        position: relative;
+        height: 50px;
+        background: url(images/head_search.png);
+        background-repeat:no-repeat;
+        /*background-position:100px -25px;
+        width:619px; */
+    }
+   .header-search {
+        position: absolute;
+        width: 344px;
+        height: 50px;
+        padding: 10px;
+        left: 45%;
+        top: 65px;
+        margin-left: -1px;
+    }
+     .header-search input {
+        float: left;
+        width: 240px;
+        height: 30px;
+        border: none;
+    }
+ .header-search button {
+        float: right;
+        width: 60px;
+        height: 30px;
+        background: none;
+        border: none;
+    }
+</style>
  <div class="headertop">
    <div class="main">
     {insert name='member_info'}
@@ -8,6 +40,14 @@
  <div class="header width1">
    <div class="main">
       <div class="logo floatleft"><a href="index.php" target="_blank"><img src="images/logo.png"></a></div>
+
+       <div class="header-search" style="float: left">
+           <form action="search.php" method="get" id="searchForm" name="searchForm" onsubmit="return checkSearchForm()" class="search-form clearfix">
+               <input class="search-text" type="text" name="keywords" id="keyword" value="" autocomplete="off">
+               <button type="submit" class="search-btn"></button>
+           </form>
+       </div>
+
       <div class="headtel floatright">
        <div> <i class="iconfont">&#xe602;</i></div>
         <h3>021-69970653转0</h3>

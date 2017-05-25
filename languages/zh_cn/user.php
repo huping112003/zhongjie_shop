@@ -336,6 +336,7 @@ $_LANG['order_postscript'] = '订单附言';
 $_LANG['order_number'] = '订单号';
 $_LANG['consignment'] = '发货单';
 $_LANG['shopping_money'] = '商品总价';
+$_LANG['goods_number'] = '商品总数量';
 $_LANG['invalid_order_id'] = '订单号错误';
 $_LANG['shipping'] = '配送方式';
 $_LANG['payment'] = '支付方式';
