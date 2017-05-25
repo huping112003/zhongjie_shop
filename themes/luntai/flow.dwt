@@ -120,7 +120,7 @@
               <div class="section-left">
                 <a class="back-shopping btn btn-gray" href="./">继续购物</a>
               </div>
-              <span class="total-price"><span class="total-num"></span>&nbsp;&nbsp;&nbsp;合计：<b id="totalSkuPrice">{$total.goods_price}</b></span>
+              <span class="total-price"><span class="total-num" id="shopping_count">{$goods_number}</span>&nbsp;&nbsp;&nbsp;合计：<b id="totalSkuPrice">{$total.goods_price}</b></span>
               <a href="flow.php?step=checkout" class="btn btn-pay btn-primary">去结算</a>
             </div>
     	</div><!-- cate-goods-list -->

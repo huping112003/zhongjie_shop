@@ -40,11 +40,11 @@
 		if (result.error == 0)
 		{
 			var rec_id = result.rec_id;
-			
 			$('#goods_number_' +rec_id).val(result.goods_number);//更新数量	
 			$('#total_items_' +rec_id).html(result.goods_subtotal);//更新小计	
 			$('#totalSkuPrice').html(result.total_price); //更新合计
 			$('#selectedCount').html(result.total_goods_count);//更新购物车数量
+			$('#shopping_count').html(result.total_goods_count_str);//更新购物车总数量
 			//$('#totalRePrice').html("- "+result.total_saving) //更新节省
 
 		}
