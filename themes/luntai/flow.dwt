@@ -610,6 +610,7 @@ padding: 10px 20px 12px; height:auto; cursor:pointer; border:none;" value="加�
             </div>
           </li>
           <!-- {/if} 缺货处理结束 -->
+          <li class="section-options clearfix">给卖家留言：<textarea name="order_msg"  rows="3" cols="20" style="width: 500px" ></textarea></li>
           <li class="section-options clearfix section-count">
             <!--<h3 class="section-header"><span>{$lang.fee_total}</span></h3>-->
             <!-- #BeginLibraryItem "/Library/order_total.lbi" --><!-- #EndLibraryItem -->

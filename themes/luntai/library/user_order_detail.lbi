@@ -24,6 +24,10 @@
   <td align="right" bgcolor="#ffffff">{$lang.detail_shipping_status}：</td>
   <td align="left" bgcolor="#ffffff">{$order.shipping_status}&nbsp;&nbsp;&nbsp;&nbsp;{$order.shipping_time}</td>
 </tr>
+<tr>
+    <td align="right" bgcolor="#ffffff">订单留言：</td>
+    <td align="left" bgcolor="#ffffff">{$order.order_msg}</td>
+</tr>
 <!-- {if $order.invoice_no}-->
 <tr>
   <td align="right" bgcolor="#ffffff">{$lang.consignment}：</td>

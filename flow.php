@@ -1391,6 +1391,7 @@ elseif ($_REQUEST['step'] == 'done') {
     $_POST['inv_payee'] = isset($_POST['inv_payee']) ? compile_str($_POST['inv_payee']) : '';
     $_POST['inv_content'] = isset($_POST['inv_content']) ? compile_str($_POST['inv_content']) : '';
     $_POST['postscript'] = isset($_POST['postscript']) ? compile_str($_POST['postscript']) : '';
+    $_POST['order_msg'] = isset($_POST['order_msg']) ? compile_str($_POST['order_msg']) : '';
 
     $order = array(
         'shipping_id' => intval($_POST['shipping']),
@@ -1413,7 +1414,8 @@ elseif ($_REQUEST['step'] == 'done') {
         'order_status' => OS_UNCONFIRMED,
         'shipping_status' => SS_UNSHIPPED,
         'pay_status' => PS_UNPAYED,
-        'agency_id' => get_agency_by_regions(array($consignee['country'], $consignee['province'], $consignee['city'], $consignee['district']))
+        'agency_id' => get_agency_by_regions(array($consignee['country'], $consignee['province'], $consignee['city'], $consignee['district'])),
+        'order_msg'=>$_POST['order_msg'],
     );
 
     /* 扩展信息 */
