@@ -102,7 +102,11 @@
                     <div class="producfont"><span>{$goods.name}</span></div>
                  </a>
                     <div class="price">
-                        <span style='float:left' class="price_list">￥{$goods.shop_price}</span>
+                        {if $smarty.session.user_id gt 0}
+                            <span style='float:left' class="price_list">￥{$goods.shop_price}</span>
+                        {else}
+                            <span style='float:left;width:100px;' class="price_list">&nbsp</span>
+                        {/if}
                         <div class="skunum gbd addcart" id="skunum{$goods.goods_id}">
                             <span class="minus" title="减少1个数量"></span>
                             <input id="number" name="number" type="text" min="1" value="1" onchange="countNum(0,{$goods.goods_id})">
