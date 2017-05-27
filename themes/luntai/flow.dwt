@@ -588,7 +588,7 @@ padding: 10px 20px 12px; height:auto; cursor:pointer; border:none;" value="加�
           </li>
           <!-- {/if} 能否开发票 -->
           <!-- 订单留言 -->
-          <li class="section-options clearfix" style="">
+          <li class="section-options clearfix" style="display:none;">
           	<h3 class="section-header">{$lang.order_postscript}</h3>
             <div class="section-body">
             	<textarea name="postscript" cols="80" rows="3" id="postscript" style="border:1px solid #ccc;">{$order.postscript|escape}</textarea>

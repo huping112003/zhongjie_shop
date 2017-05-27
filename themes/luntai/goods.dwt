@@ -76,7 +76,18 @@ function reg(str){
                                   </span>
 
                                   <!--{else}-->
-                                  <span>{$lang.shop_price}：</span> <span class="unit"> <b class="nala_price red" id="ECS_SHOPPRICE">{$goods.shop_price_formated} </b> </span>
+                                  <span>{$lang.shop_price}：</span>
+                                  <span class="unit">
+                                  {if $smarty.session.user_id gt 0}
+                                      <b class="nala_price red" id="ECS_SHOPPRICE">
+                                        {$goods.shop_price_formated}
+                                      </b>
+                                  {else}
+                                      <b class="nala_price red" id="">
+                                        ---
+                                      </b>
+                                  {/if}
+                                  </span>
 
                                     <!--{if $rank_prices}-->
                                     <a href="javascript:;" id="membership" data-type="normal" class="membership"  style="display:none;">高级会员购买享有折扣</a>

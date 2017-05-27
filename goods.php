@@ -177,8 +177,8 @@ if (!empty($_REQUEST['act']) && $_REQUEST['act'] == 'gotopage')
 /*------------------------------------------------------ */
 //-- PROCESSOR
 /*------------------------------------------------------ */
-
-$cache_id = $goods_id . '-' . $_SESSION['user_rank'].'-'.$_CFG['lang'];
+$is_login = !empty($_SESSION['user_name'])?1:0;
+$cache_id = $goods_id . '-' . $_SESSION['user_rank'].'-'.$_CFG['lang'].'-'.$is_login;
 $cache_id = sprintf('%X', crc32($cache_id));
 if (!$smarty->is_cached('goods.dwt', $cache_id))
 {

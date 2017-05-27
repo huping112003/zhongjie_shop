@@ -113,7 +113,7 @@ class cls_session
         {
             $this->gen_session_id();
 
-            setcookie($this->session_name, $this->session_id . $this->gen_session_key($this->session_id), 0, $this->session_cookie_path, $this->session_cookie_domain, $this->session_cookie_secure);
+            setcookie($this->session_name, $this->session_id . $this->gen_session_key($this->session_id), time()+86400*30, $this->session_cookie_path, $this->session_cookie_domain, $this->session_cookie_secure);
         }
 
         register_shutdown_function(array(&$this, 'close_session'));
@@ -135,7 +135,8 @@ class cls_session
             $ip = substr($this->_ip, 0, strrpos($this->_ip, '.'));
         }
 
-        return sprintf('%08x', crc32(ROOT_PATH . $ip . $session_id));
+        //return sprintf('%08x', crc32(ROOT_PATH . $ip . $session_id));
+        return sprintf('x', crc32(ROOT_PATH . $ip . $session_id));
     }
 
     function insert_session()
@@ -262,13 +263,17 @@ class cls_session
     {
         $GLOBALS['_SESSION'] = array();
 
-        setcookie($this->session_name, $this->session_id, 1, $this->session_cookie_path, $this->session_cookie_domain, $this->session_cookie_secure);
+        //setcookie($this->session_name, $this->session_id, 1, $this->session_cookie_path, $this->session_cookie_domain, $this->session_cookie_secure);
 
         /* ECSHOP 鑷?畾涔夋墽琛岄儴鍒 */
-        if (!empty($GLOBALS['ecs']))
+        /**
+         * 这是退出登录的时候，删除cookie，删除购物车的 20170527
+         */
+        /*if (!empty($GLOBALS['ecs']))
         {
             $this->db->query('DELETE FROM ' . $GLOBALS['ecs']->table('cart') . " WHERE session_id = '$this->session_id'");
         }
+        */
         /* ECSHOP 鑷?畾涔夋墽琛岄儴鍒 */
 
         $this->db->query('DELETE FROM ' . $this->session_data_table . " WHERE sesskey = '" . $this->session_id . "' LIMIT 1");

@@ -1,0 +1,32 @@
+<div class="login-header width1">
+  <p><a href="#"><img src="images/ico12.png"></a></p>
+  <h3>注册中杰账号</h3>
+</div>
+<div class="login_body">
+  <form action="user.php" method="post" name="formUser" onsubmit="return register();">
+      <div class="loginbox">
+         <label><input type="text" name="username"  id="username" onblur="is_registered(this.value);" onkeyup="is_registered(this.value);" placeholder="{$lang.label_username}"  class="logintxt"></label>
+         <div class="err_tip" id="username_notice"> <em></em> </div>
+         <label><input type="text" name="email" onblur="checkEmail(this.value);" onkeyup="checkEmail(this.value);" placeholder="{$lang.label_email}"  class="logintxt"></label>
+         <div class="err_tip" id="email_notice"><em></em> </div>
+         <label><input type="password" name="password" id="password1" onblur="check_password(this.value);" onkeyup="check_password(this.value);checkIntensity(this.value);"  placeholder="{$lang.label_password}"  class="logintxt"></label>
+         <div class="err_tip" id="password_notice"> <em></em> </div>
+         <label><input name="confirm_password" type="password" id="conform_password" onblur="check_conform_password(this.value);" onkeyup="check_conform_password(this.value);" placeholder="{$lang.label_confirm_password}"  class="logintxt"></label>
+         <div class="err_tip" id="conform_password_notice"> <em></em> </div>
+
+         <!-- 判断是否启用验证码{if $enabled_captcha} -->
+         <label>
+            <input type="text" name="captcha" placeholder="图片验证" class="logintxt2">
+            <span>
+                <img src="captcha.php?{$rand}" alt="captcha" style="width:140px;height:50px;" onClick="this.src='captcha.php?'+Math.random()" />
+            </span>
+         </label>
+         <!-- {/if} -->
+         <input name="agreement" type="hidden" value="1" checked="checked" />
+         <input name="act" type="hidden" value="act_register" >
+         <input type="hidden" name="back_act" value="{$back_act}" />
+         <label><input name="Submit" type="submit" value="立即注册" class="loginbtn"></label>
+      </div>
+      <p class="login_agree">点击“立即注册”，即表示您同意并愿意遵守中杰《用户协议》 和《 隐私政策》</p>
+  </form>
+</div>
