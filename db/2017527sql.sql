@@ -1,0 +1,1 @@
+ ALTER TABLE ecs_order_info ADD order_msg VARCHAR(200)comment '∂©µ•¡Ù—‘';
