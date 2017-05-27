@@ -588,7 +588,7 @@ padding: 10px 20px 12px; height:auto; cursor:pointer; border:none;" value="加�
           </li>
           <!-- {/if} 能否开发票 -->
           <!-- 订单留言 -->
-          <li class="section-options clearfix" style="display:none;">
+          <li class="section-options clearfix" style="">
           	<h3 class="section-header">{$lang.order_postscript}</h3>
             <div class="section-body">
             	<textarea name="postscript" cols="80" rows="3" id="postscript" style="border:1px solid #ccc;">{$order.postscript|escape}</textarea>
@@ -596,7 +596,7 @@ padding: 10px 20px 12px; height:auto; cursor:pointer; border:none;" value="加�
           </li>
           <!-- /订单留言 -->
           <!-- {if $how_oos_list} 是否使用缺货处理 -->
-          <li class="section-options clearfix">
+          <li class="section-options clearfix" style='display:none;'>
           	<h3 class="section-header">{$lang.booking_process}</h3>
             <div class="section-body">
             	<ul class="item-list clearfix" id="quehuo-list">
@@ -610,7 +610,11 @@ padding: 10px 20px 12px; height:auto; cursor:pointer; border:none;" value="加�
             </div>
           </li>
           <!-- {/if} 缺货处理结束 -->
-          <li class="section-options clearfix">给卖家留言：<textarea name="order_msg"  rows="3" cols="20" style="width: 500px" ></textarea></li>
+          <li class="section-options clearfix"><h3 class="section-header">订单备注：</h3>
+          <div class="section-body">
+                <textarea name="order_msg"  rows="3" cols="20" style="width: 500px" ></textarea>
+           </div>
+          </li>
           <li class="section-options clearfix section-count">
             <!--<h3 class="section-header"><span>{$lang.fee_total}</span></h3>-->
             <!-- #BeginLibraryItem "/Library/order_total.lbi" --><!-- #EndLibraryItem -->

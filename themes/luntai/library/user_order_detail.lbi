@@ -25,7 +25,7 @@
   <td align="left" bgcolor="#ffffff">{$order.shipping_status}&nbsp;&nbsp;&nbsp;&nbsp;{$order.shipping_time}</td>
 </tr>
 <tr>
-    <td align="right" bgcolor="#ffffff">订单留言：</td>
+    <td align="right" bgcolor="#ffffff">订单备注：</td>
     <td align="left" bgcolor="#ffffff">{$order.order_msg}</td>
 </tr>
 <!-- {if $order.invoice_no}-->

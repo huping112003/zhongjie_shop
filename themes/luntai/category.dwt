@@ -9,12 +9,12 @@
     <link href="css/base.css" rel="stylesheet" type="text/css" >
     <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" >
     <link href="css/iconfont.css" rel="stylesheet" type="text/css" >
-
+    <link href="css/good_list.css" rel="stylesheet" type="text/css" >
 </head>
 
 <body>
     {insert_scripts files='jquery-1.9.1.min.js,jquery.json.js,common.js,global.js,easydialog.min.js,compare.js'}
-    {insert_scripts files='transport_jquery.js,utils.js,jquery.SuperSlide.js,xiaomi_common.js,xiaomi_category.js'}
+    {insert_scripts files='transport_jquery.js,utils.js,jquery.SuperSlide.js,xiaomi_common.js,xiaomi_category.js,good_list.js'}
  <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
  <!-- 产品分类 -->
   <div class="containerone">
@@ -100,8 +100,18 @@
                 <a href="{$goods.url}" target="_blank">
                     <div class="proimg"><img src="{$goods.goods_thumb}"></div>
                     <div class="producfont"><span>{$goods.name}</span></div>
-                </a>
-                <a class="btn-buy J_buyGoods addTocart" href="javascript:addToCart({$goods.goods_id})"></a>
+                 </a>
+                    <div class="price">
+                        <span style='float:left' class="price_list">￥{$goods.shop_price}</span>
+                        <div class="skunum gbd addcart" id="skunum{$goods.goods_id}">
+                            <span class="minus" title="减少1个数量"></span>
+                            <input id="number" name="number" type="text" min="1" value="1" onchange="countNum(0,{$goods.goods_id})">
+                            <span class="add" title="增加1个数量" ></span>
+                            <span style="display:none" class="cart_id">{$goods.goods_id}</span>
+                        </div>
+                    </div>
+
+                <a class="btn-buy J_buyGoods addTocart" href="javascript:addToCartList({$goods.goods_id})"></a>
             </li>
             <!-- {/if} -->
             <!-- {/foreach} -->

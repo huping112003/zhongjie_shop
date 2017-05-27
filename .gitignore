@@ -2,3 +2,4 @@
 /images/*
 temp/
 data/config.php
+includes\cls_template.php

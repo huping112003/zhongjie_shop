@@ -18,6 +18,7 @@ $(function(){
 	$(".seemore_items").slide({mainCell:".bd ul",effect:"top",autoPage:true,scroll:3,vis:3});
 
 	$("#skunum").on('click', 'span', function(e) {
+		alert('test');
 		if ($(this).hasClass("add")) {
 			countNum(1);
 		} else {

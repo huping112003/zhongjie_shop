@@ -375,8 +375,8 @@ Template Type: type_0
 
 .produc-detail li .addTocart{
     position: absolute;
-    right: 10px;
-    bottom: 60px;
+    right: 0px;
+    bottom: 15px;
     background-image: url(./images/addTocart.png);
     background-repeat: no-repeat;
     display: inline-block;
@@ -406,6 +406,7 @@ Template Type: type_0
 	font-size: 14px;
 	padding: 8px 10px 1px;
 }
+
 .produc-detail li .producfont span {
 	color: #fff;
 	margin-right: 15px;

@@ -1,0 +1,51 @@
+.produc-detail li .price {
+	height: 45px;
+	font-size: 20px;
+	padding: 8px 0px 1px;
+	color: #F40;
+	font-weight:700;
+}
+.produc-detail li .price .price_list {
+	/*margin-top:5px;*/
+	margin-right: 18px;
+}
+.skunum{
+	line-height:32px;
+}
+.skunum span {
+	float: left;
+	display: block;
+	width: 28px;
+	height: 30px;
+	border: 1px solid #ccc;
+	background-color: #eee;
+	text-align: center;
+	font-size: 20px;
+	overflow: hidden;
+	line-height: 28px;
+	color: #777;
+	cursor: pointer;
+	background-repeat:no-repeat;
+	background-position:center center;
+}
+.skunum input {
+	float: left;
+	display: block;
+	width: 50px;
+	height: 14px;
+	padding: 8px 0;
+	line-height: 14px;
+	border: none;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+	font-size: 14px;
+	background-color: #fff;
+}
+.skunum span.add {
+	background-image:url(../images/add.png);
+	margin-left: -2px;
+}
+.skunum span.minus{
+	background-image:url(../images/minus.png);
+}
