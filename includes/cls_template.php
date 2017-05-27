@@ -492,7 +492,7 @@ class cls_template
                 case 'insert' :
                     $t = $this->get_para(substr($tag, 7), false);
 
-                    $out = "<?php \n" . '$k = ' . preg_replace_callback("/(\'\\$[^,]+)/e" , "stripslashes(trim('\\1','\''));", var_export($t, true)) . ";\n";
+                    $out = "<?php " . '$k = ' . preg_replace_callback("/(\'\\$[^,] )/" , function($match){return stripslashes(trim($match[1],'\''));}, var_export($t, true)) . ";"
                     $out .= 'echo $this->_echash . $k[\'name\'] . \'|\' . serialize($k) . $this->_echash;' . "\n?>";
 
                     return $out;
