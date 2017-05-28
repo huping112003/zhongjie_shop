@@ -123,7 +123,7 @@
   </tr>
   <tr>
     <td><div align="right"><strong>{$lang.label_postscript}</strong></div></td>
-    <td colspan="3">{$order.postscript}</td>
+    <td colspan="3">{$order.order_msg}</td>
   </tr>
   <tr>
     <td><div align="right"><strong>{$lang.label_how_oos}</strong></div></td>
@@ -223,8 +223,8 @@
     <td>{if $order.total_weight}<div align="right"><strong>{$lang.label_total_weight}
     </strong></div>{/if}</td>
     <td>{if $order.total_weight}<div align="right">{$order.total_weight}
-    </div>{/if}</td>
-    <td>&nbsp;</td>
+    </div>{/if}<div align="right"><strong>{$lang.count_goods_number}:</strong>{$count_goods_number}</div></td>
+    <td></td>
     <td><div align="right"><strong>{$lang.label_total}</strong></div></td>
     <td><div align="right">{$order.formated_goods_amount}</div></td>
   </tr>

@@ -385,6 +385,7 @@ elseif ($_REQUEST['act'] == 'info')
                     ON g.brand_id = b.brand_id
             WHERE o.order_id = '$order[order_id]'";
     $res = $db->query($sql);
+    $count_goods_number = 0;
     while ($row = $db->fetchRow($res))
     {
         /* 虚拟商品支持 */
@@ -413,7 +414,7 @@ elseif ($_REQUEST['act'] == 'info')
             $row['brand_name'] = '';
             $row['package_goods_list'] = get_package_goods($row['goods_id']);
         }
-
+        $count_goods_number = $count_goods_number+$row['goods_number'];
         $goods_list[] = $row;
     }
 
@@ -430,7 +431,8 @@ elseif ($_REQUEST['act'] == 'info')
 
     $smarty->assign('goods_attr', $attr);
     $smarty->assign('goods_list', $goods_list);
-
+    $smarty->assign('count_goods_number', $count_goods_number);
+    //print_r($goods_list);
     /* 取得能执行的操作列表 */
     $operable_list = operable_list($order);
     $smarty->assign('operable_list', $operable_list);
@@ -593,7 +595,7 @@ elseif ($_REQUEST['act'] == 'info')
         /* 模板赋值 */
         $smarty->assign('ur_here', $_LANG['order_info']);
         $smarty->assign('action_link', array('href' => 'order.php?act=list&' . list_link_postfix(), 'text' => $_LANG['02_order_list']));
-
+        //print_r($order);
         /* 显示模板 */
         assign_query_info();
         $smarty->display('order_info.htm');

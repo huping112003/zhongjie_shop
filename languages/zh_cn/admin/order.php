@@ -173,6 +173,7 @@ $_LANG['storage'] = '库存';
 $_LANG['subtotal'] = '小计';
 $_LANG['label_total'] = '合计：';
 $_LANG['label_total_weight'] = '商品总重量：';
+$_LANG['count_goods_number'] = '商品总数量';
 
 $_LANG['label_goods_amount'] = '商品总金额：';
 $_LANG['label_discount'] = '折扣：';
