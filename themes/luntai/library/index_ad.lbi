@@ -1,5 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<div id="J_homeSlider" class="xm-slider" style="overflow:hidden;position:relative;">
+<div id="J_homeSlider" class="xm-slider index_branner" style="overflow:hidden;position:relative;">
 	<div class="xm-slider-container" style="min-height:600px;">
     	<div class="xm-slider-control" style="text-align:center">
             <!--{foreach from=$index_ad_w item=index_ad}-->

@@ -49,3 +49,9 @@
 .skunum span.minus{
 	background-image:url(../images/minus.png);
 }
+
+.index_branner{
+	margin: 0 auto;
+	width:1100px;
+	text-align:center;
+}
