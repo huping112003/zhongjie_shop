@@ -52,6 +52,77 @@
 
 .index_branner{
 	margin: 0 auto;
-	width:1100px;
+	width:1200px;
 	text-align:center;
+	height: 400px;
+}
+.branner{
+	margin-right: 40px;
+	float:left;width:900px;
+}
+.login_body{
+	width: 260px;
+	text-align:center;
+	margin:40px 0;
+	padding-bottom: 20px;
+	float: left;
+}
+.loginbox label{
+	margin-bottom:15px;
+	display:block;
+	width:100%;
+	overflow:hidden;
+}
+.loginbox .logintxt{
+	width: 260px;
+	height: 22px;
+	line-height: 22px;
+	padding: 27px 27px 24px 17px;
+	display: block;
+	border:1px solid #ddd;}
+.loginbox .loginbtn{
+	background-color: #103184;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	display: block;
+	margin-bottom: 14px;
+	text-align: center;
+	font-size:14px;
+	color: #fff;
+	cursor: pointer;
+	border:0;
+}
+.loginbox .loginbtn:hover{
+	opacity:0.8;
+	transition:opacity  linear 1s;}
+.login_link{
+	padding-top: 30px;
+	text-align: center;
+	color: #e0e0e0;
+}
+.login_link a{
+	font-size:12px;
+	color:#757575;
+}
+.login_link span{
+	margin:0 15px;
+}
+.loginbox .logintxt2{
+	width: 99px;
+	height: 51px;
+	line-height: 22px;
+	padding: 13px 16px 13px 14px;
+	display: block;
+	border:1px solid #ddd;
+	float:left;
+}
+.loginbox span{
+	float:right;
+	margin-right:15px;}
+.login_agree{
+	margin-top: 10px;
+	color: #9d9d9d;
+	font-size:12px;
+	line-height:22px;
 }
