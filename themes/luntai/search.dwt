@@ -9,10 +9,14 @@
     <link href="css/base.css" rel="stylesheet" type="text/css" >
     <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" >
     <link href="css/iconfont.css" rel="stylesheet" type="text/css" >
+    <link href="css/good_list.css" rel="stylesheet" type="text/css" >
 </head>
 
 <body>
+    {insert_scripts files='jquery-1.9.1.min.js,jquery.json.js,common.js,global.js,easydialog.min.js,compare.js'}
+    {insert_scripts files='transport_jquery.js,utils.js,jquery.SuperSlide.js,good_list.js'}
  <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
  <!-- 产品分类 -->
 
 <div class="raybg width1">
@@ -31,7 +35,22 @@
                     <div class="proimg"><img src="{$goods.goods_thumb}"></div>
                     <div class="producfont"><span>{$goods.goods_name}</span></div>
                 </a>
+                 <div class="price">
+                    {if $smarty.session.user_id gt 0}
+                        <span style='float:left' class="price_list">￥{$goods.shop_price}</span>
+                    {else}
+                        <span style='float:left;width:100px;' class="price_list">&nbsp</span>
+                    {/if}
+                    <div class="skunum gbd addcart" id="skunum{$goods.goods_id}">
+                        <span class="minus" title="减少1个数量"></span>
+                        <input id="number" name="number" type="text" min="1" value="1" onchange="countNum(0,{$goods.goods_id})">
+                        <span class="add" title="增加1个数量" ></span>
+                        <span style="display:none" class="cart_id">{$goods.goods_id}</span>
+                    </div>
+                 </div>
+                 <a class="btn-buy J_buyGoods addTocart" href="javascript:addToCartList({$goods.goods_id})"></a>
             </li>
+
             <!-- {/if} -->
             <!-- {/foreach} -->
        </ul>
@@ -59,11 +78,20 @@
     </div>
 </div>
 <!-- container end -->
+<div class="add_ok" id="cart_show">
+    <div class="tip">
+        <i class="iconfont"> </i>商品已成功加入购物车
+    </div>
+    <div class="go">
+        <a href="javascript:easyDialog.close();" class="back">&lt;&lt;继续购物</a>
+        <a href="flow.php" class="btn">去结算</a>
+    </div>
+</div>
 <!-- footer start -->
 <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
  <!-- footer end -->
    <!-- js 引用 -->
-    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+
     <script type="text/javascript">
         $('.mavbar li').mouseenter(function(){
            $(this).addClass('on').siblings().removeClass('on');
