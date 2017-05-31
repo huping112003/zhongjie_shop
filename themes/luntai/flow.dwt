@@ -432,11 +432,24 @@ padding: 10px 20px 12px; height:auto; cursor:pointer; border:none;" value="加�
               <!-- {/foreach} -->
               <!-- {if !$gb_deposit} 团购且有保证金时不显示 -->
               <tr>
-                <td bgcolor="#ffffff" colspan="7"><!-- {if $discount gt 0} -->{$your_discount}<br />
-
-                  <!-- {/if} -->
-                  {$goods_number}&nbsp;&nbsp;&nbsp;&nbsp;{$shopping_money}<!-- {if $show_marketprice} -->，{$market_price_desc}<!--{/if}--></td>
+                <td bgcolor="#ffffff" colspan="6" align="right">
+                    {$lang.shopping_goods_number}
+                 </td>
+                 <td>
+                    {$goods_number} 件
+                 </td>
               </tr>
+               <tr>
+                    <td bgcolor="#ffffff" colspan="6" align="right">
+                          {$lang.shopping_money_text}
+                    </td>
+                   <td bgcolor="#ffffff"  >
+                    <!-- {if $discount gt 0} -->{$your_discount}<br />
+                    <!-- {/if} -->
+                    {$shopping_money}<!-- {if $show_marketprice} -->，{$market_price_desc}<!--{/if}-->
+
+                    </td>
+                </tr>
               <!-- {/if} -->
             </table>
           </li>

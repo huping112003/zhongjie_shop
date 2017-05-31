@@ -657,8 +657,8 @@ if ($_REQUEST['step'] == 'add_to_cart') {
     $total = order_fee($order, $cart_goods, $consignee);
 
     $smarty->assign('total', $total);
-    $smarty->assign('shopping_money', sprintf($_LANG['shopping_money'], $total['formated_goods_price']));
-    $smarty->assign('goods_number', $_LANG['shopping_goods_number'] . ":" . $total['goods_number']);
+    $smarty->assign('shopping_money',  $total['formated_goods_price']);
+    $smarty->assign('goods_number', $total['goods_number']);
     $smarty->assign('market_price_desc', sprintf($_LANG['than_market_price'], $total['formated_market_price'], $total['formated_saving'], $total['save_rate']));
 
     /* 取得配送列表 */

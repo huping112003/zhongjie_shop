@@ -13,7 +13,7 @@
         width: 344px;
         height: 50px;
         padding: 10px;
-        left: 45%;
+        left: 72%;
         top: 65px;
         margin-left: -1px;
     }
@@ -23,7 +23,7 @@
         height: 30px;
         border: none;
     }
- .header-search button {
+    .header-search button {
         float: right;
         width: 60px;
         height: 30px;
@@ -47,12 +47,14 @@
                <button type="submit" class="search-btn"></button>
            </form>
        </div>
-
+    <!--
       <div class="headtel floatright">
-       <div> <i class="iconfont">&#xe602;</i></div>
-        <h3>021-69970653转0</h3>
+           <div> <i class="iconfont">&#xe602;</i></div>
+            <h3>021-69970653转0</h3>
        </div>
-   </div>
+       -->
+      </div>
+
  </div>
  <div class="navd width1">
    <div class="main">

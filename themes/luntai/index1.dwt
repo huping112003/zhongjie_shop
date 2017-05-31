@@ -27,22 +27,25 @@
         <!-- #BeginLibraryItem "/library/index_ad.lbi" --><!-- #EndLibraryItem -->
     </div>
     <div class="login_body">
-
-          <form name="formLogin" action="user.php" method="post" onsubmit="return userLogin()">
-              <div class="loginbox">
-                 <label><input type="text" name="username" placeholder="请输入你的用户名" class="logintxt"></label>
-                 <label><input type="password" name="password" placeholder="请输入密码" class="logintxt"></label>
-                    <label>
-                    <input type="text" name="captcha" placeholder="图片验证" class="logintxt2">
-                    <span>
-                        <img src="captcha.php?is_login=1&amp;1290896243" alt="captcha" class="code-img" onclick="this.src='captcha.php?is_login=1&amp;'+Math.random()" style="width:140px;height:50px;">
-                    </span>
-                 </label>
-                              <input type="hidden" name="act" value="act_login">
-                 <input type="hidden" name="back_act" value="http://zhongjie_shop.ecshop.com/index1.php">
-                 <label><input type="submit" name="submit" value="登录" class="loginbtn us_Submit"></label>
-              </div>
-          </form>
+        {if $smarty.session.user_id gt 0}
+              hi 欢迎{$smarty.session.user_name}来到中杰轮胎
+        {else}
+               <form name="formLogin" action="user.php" method="post" onsubmit="return userLogin()">
+                    <div class="loginbox">
+                       <label><input type="text" name="username" placeholder="请输入你的用户名" class="logintxt"></label>
+                       <label><input type="password" name="password" placeholder="请输入密码" class="logintxt"></label>
+                          <label>
+                          <input type="text" name="captcha" placeholder="图片验证" class="logintxt2">
+                          <span>
+                              <img src="captcha.php?is_login=1&amp;1290896243" alt="captcha" class="code-img" onclick="this.src='captcha.php?is_login=1&amp;'+Math.random()" style="width:140px;height:50px;">
+                          </span>
+                       </label>
+                                    <input type="hidden" name="act" value="act_login">
+                       <input type="hidden" name="back_act" value="http://zhongjie_shop.ecshop.com/index1.php">
+                       <label><input type="submit" name="submit" value="登录" class="loginbtn us_Submit"></label>
+                    </div>
+              </form>
+        {/if}
      </div>
 
 
