@@ -105,7 +105,7 @@ if ($act == 'cat_rec')
 /*------------------------------------------------------ */
 $is_login = !empty($_SESSION['user_name'])?1:0;
 /* 缓存编号 */
-$cache_id = sprintf('%X', crc32($_SESSION['user_rank'] . '-' . $_CFG['lang'].$is_login));
+$cache_id = sprintf('%X', crc32($_SESSION['user_rank'] . '-' . $_CFG['lang'].$is_login.time()));
 
 if (!$smarty->is_cached('index1.dwt', $cache_id))
 {
@@ -132,7 +132,7 @@ if (!$smarty->is_cached('index1.dwt', $cache_id))
     $smarty->assign('best_goods',      get_recommend_goods('best'));    // 推荐商品
     $smarty->assign('new_goods',       get_recommend_goods('new'));     // 最新商品
     $smarty->assign('hot_goods',       get_recommend_goods('hot'));     // 热点文章
-
+    print_r(get_promote_goods());
     $smarty->assign('promotion_goods', get_promote_goods()); // 特价商品
     $smarty->assign('brand_list',      get_brands());
     $smarty->assign('promotion_info',  get_promotion_info()); // 增加一个动态显示所有促销信息的标签栏
@@ -197,7 +197,9 @@ if (!$smarty->is_cached('index1.dwt', $cache_id))
         }
         $smarty->assign('cat_rec', $cat_rec);
     }
-
+    $sales_goods = get_cat_id_goods_list(8,8);//获取特价商品信息
+    //print_r($sales_goods);
+    $smarty->assign('sales_goods',$sales_goods);
     /* 页面中的动态内容 */
     assign_dynamic('index');
     $sql = 'select title,content,article_id from ' . $ecs->table("article") . ' where title="公司简介" ';
@@ -206,6 +208,7 @@ if (!$smarty->is_cached('index1.dwt', $cache_id))
 
     $smarty->assign('company_article',$company_article);
     $smarty->assign('enabled_mes_captcha', (intval($_CFG['captcha']) & CAPTCHA_MESSAGE));
+
 
 }
 
