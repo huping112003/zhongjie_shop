@@ -13,7 +13,7 @@
         width: 344px;
         height: 50px;
         padding: 10px;
-        left: 45%;
+        left: 55%;
         top: 65px;
         margin-left: -1px;
     }
@@ -23,18 +23,26 @@
         height: 30px;
         border: none;
     }
- .header-search button {
+    .header-search button {
         float: right;
         width: 60px;
         height: 30px;
         background: none;
         border: none;
     }
+    .header-cart {
+        width: 100px;
+        height: 32px;
+        margin-top: 42px;
+        border:1px solid  #cccccc;
+        font-size: 18px;
+        font-weight: 700;
+    }
 </style>
  <div class="headertop">
    <div class="main">
     {insert name='member_info'}
-      <div class="hilogin floatright"><a href="flow.php" target="_blank">购物车<i class="iconfont">&#xe605;</i></a></div>
+      <div class="hilogin floatright" style="display: none"><a href="flow.php" target="_blank">我的购物车<i class="iconfont">&#xe605;</i></a></div>
    </div>
  </div>
  <div class="header width1">
@@ -47,12 +55,22 @@
                <button type="submit" class="search-btn"></button>
            </form>
        </div>
+       <div class="hilogin floatright header-cart">
+           <a href="flow.php" target="_blank">
+               <span style="padding-top: 5px;padding-left: 22px">
+                   我的购物车
+               </span>
 
-      <div class="headtel floatright">
-       <div> <i class="iconfont">&#xe602;</i></div>
-        <h3>021-69970653转0</h3>
+           </a>
        </div>
-   </div>
+    <!--
+      <div class="headtel floatright">
+           <div> <i class="iconfont">&#xe602;</i></div>
+            <h3>021-69970653转0</h3>
+       </div>
+       -->
+      </div>
+
  </div>
  <div class="navd width1">
    <div class="main">

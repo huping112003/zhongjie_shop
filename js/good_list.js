@@ -66,4 +66,60 @@ function addToCartList(goodsId, parentId)
 
     Ajax.call('flow.php?step=add_to_cart', 'goods=' + $.toJSON(goods), addToCartResponse, 'POST', 'JSON');
 }
+function signIn()
+{
+    var frm = document.forms['ECS_LOGINFORM'];
+    if (frm)
+    {
+        var username = frm.elements['username'].value;
+        var password = frm.elements['password'].value;
+        var captcha = '';
+        if (frm.elements['captcha'])
+        {
+            captcha = frm.elements['captcha'].value;
+        }
+        if (username.length == 0 || password.length == 0)
+        {
+            alert('用户名或密码不能为空！');
+            return;
+        }
+        else
+        {
+            Ajax.call('user.php?act=signin', 'username=' + username + '&password=' + encodeURIComponent(password) + '&captcha=' + captcha, signinResponse, "POST", "TEXT");
+        }
+    }
+    else
+    {
+        alert('Template error!');
+    }
+}
+function signinResponse(result)
+{
+    var userName = document.forms['ECS_LOGINFORM'].elements['username'].value;
+    var mzone = document.getElementById("ECS_MEMBERZONE");
+    var res   = $.evalJSON(result);
+    if (res.error > 0)
+    {
+        alert(res.content);
+        if(res.html)
+        {
+            mzone.innerHTML = res.html;
+            document.forms['ECS_LOGINFORM'].elements['username'].value = userName;
+        }
+    }
+    else
+    {
+        if (mzone)
+        {
+            mzone.innerHTML = res.content;
+            evalscript(res.ucdata);
+            //alert(res.ucdata);
+        }
+        else
+        {
+            //alert(res.content);
+            window.location.reload()
+        }
+    }
+}
 

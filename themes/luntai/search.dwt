@@ -36,19 +36,22 @@
                     <div class="producfont"><span>{$goods.goods_name}</span></div>
                 </a>
                  <div class="price">
-                    {if $smarty.session.user_id gt 0}
-                        <span style='float:left' class="price_list">￥{$goods.shop_price}</span>
-                    {else}
-                        <span style='float:left;width:100px;' class="price_list">&nbsp</span>
-                    {/if}
-                    <div class="skunum gbd addcart" id="skunum{$goods.goods_id}">
-                        <span class="minus" title="减少1个数量"></span>
-                        <input id="number" name="number" type="text" min="1" value="1" onchange="countNum(0,{$goods.goods_id})">
-                        <span class="add" title="增加1个数量" ></span>
-                        <span style="display:none" class="cart_id">{$goods.goods_id}</span>
-                    </div>
+                     {if $smarty.session.user_id gt 0}
+                         <span style='float:left' class="price_list">￥{$goods.shop_price}</span>
+                     {else}
+                         <span style='float:left;width:70px;' class="price_list">&nbsp</span>
+                     {/if}
+                     <div class="skunum gbd addcart" id="skunum{$goods.goods_id}">
+                         <span class="minus" title="减少1个数量"></span>
+                         <input id="number" name="number" type="text" min="1" value="1" onchange="countNum(0,{$goods.goods_id})">
+                         <span class="add" title="增加1个数量" ></span>
+                         <span style="display:none" class="cart_id">{$goods.goods_id}</span>
+                     </div>
                  </div>
-                 <a class="btn-buy J_buyGoods addTocart" href="javascript:addToCartList({$goods.goods_id})"></a>
+
+                 <a class="btn-buy J_buyGoods addTocarts btn-primary" href="javascript:addToCartList({$goods.goods_id})">
+                     <span class="addtocart_text">加入购物车</span>
+                 </a>
             </li>
 
             <!-- {/if} -->
