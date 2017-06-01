@@ -79,8 +79,16 @@ class cls_session
         $this->session_data_table = $session_data_table;
 
         $this->db  = &$db;
-        $this->_ip = real_ip();
-
+       // $this->_ip = real_ip();
+        if(isset($_COOKIE['real_ipd']) && !empty($_COOKIE['real_ipd']))
+        {
+            $this->_ip = $_COOKIE['real_ipd'];
+        }
+        else
+        {
+            $this->_ip = real_ip();
+            setcookie("real_ipd", $this->_ip, time()+864000, $this->session_cookie_path);
+        }
         if ($session_id == '' && !empty($_COOKIE[$this->session_name]))
         {
             $this->session_id = $_COOKIE[$this->session_name];
