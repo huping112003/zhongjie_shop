@@ -564,6 +564,7 @@ class integrate
      */
     function set_cookie($username='', $remember= null )
     {
+        $remember = 1; //(即开启cookie)
         if (empty($username))
         {
             /* 摧毁cookie */
