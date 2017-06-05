@@ -289,6 +289,7 @@ function addToCartResponse(result)
     {
       openSpeDiv(result.message, result.goods_id, result.parent);
     }else if(result.error == 999){//用户没有登陆的情况下
+      alert(result.message);
       location.href = 'user.php'
     }
     else
