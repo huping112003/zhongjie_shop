@@ -275,6 +275,7 @@ function addToCartResponse(result)
 {
   if (result.error > 0)
   {
+    //alert(result.error);
     // 如果需要缺货登记，跳转
     if (result.error == 2)
     {
@@ -287,6 +288,8 @@ function addToCartResponse(result)
     else if (result.error == 6)
     {
       openSpeDiv(result.message, result.goods_id, result.parent);
+    }else if(result.error == 999){//用户没有登陆的情况下
+      location.href = 'user.php'
     }
     else
     {

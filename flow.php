@@ -51,6 +51,12 @@ $smarty->assign('data_dir', DATA_DIR);       // 数据目录
 /*------------------------------------------------------ */
 if ($_REQUEST['step'] == 'add_to_cart') {
     include_once('includes/cls_json.php');
+    if ( empty($_SESSION['user_name'])){//判断用户加入购物车
+        $json = new JSON;
+        $result['error']  = "999";
+        $result['message'] = "请先登录";
+        die($json->encode($result));
+    }
     $_POST['goods'] = strip_tags(urldecode($_POST['goods']));
     $_POST['goods'] = json_str_iconv($_POST['goods']);
 

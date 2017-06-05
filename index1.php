@@ -16,6 +16,7 @@
 define('IN_ECS', true);
 
 require(dirname(__FILE__) . '/includes/init.php');
+header('Content-type: text/html;charset=utf-8');
 
 if ((DEBUG_MODE & 2) != 2)
 {
@@ -105,7 +106,7 @@ if ($act == 'cat_rec')
 /*------------------------------------------------------ */
 $is_login = !empty($_SESSION['user_name'])?1:0;
 /* 缓存编号 */
-$cache_id = sprintf('%X', crc32($_SESSION['user_rank'] . '-' . $_CFG['lang'].$is_login.time()));
+$cache_id = sprintf('%X', crc32($_SESSION['user_rank'] . '-' . $_CFG['lang'].$is_login));
 
 if (!$smarty->is_cached('index1.dwt', $cache_id))
 {
@@ -132,7 +133,7 @@ if (!$smarty->is_cached('index1.dwt', $cache_id))
     $smarty->assign('best_goods',      get_recommend_goods('best'));    // 推荐商品
     $smarty->assign('new_goods',       get_recommend_goods('new'));     // 最新商品
     $smarty->assign('hot_goods',       get_recommend_goods('hot'));     // 热点文章
-    print_r(get_promote_goods());
+
     $smarty->assign('promotion_goods', get_promote_goods()); // 特价商品
     $smarty->assign('brand_list',      get_brands());
     $smarty->assign('promotion_info',  get_promotion_info()); // 增加一个动态显示所有促销信息的标签栏

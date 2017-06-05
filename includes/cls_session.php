@@ -79,7 +79,9 @@ class cls_session
         $this->session_data_table = $session_data_table;
 
         $this->db  = &$db;
-       // $this->_ip = real_ip();
+
+
+
         if(isset($_COOKIE['real_ipd']) && !empty($_COOKIE['real_ipd']))
         {
             $this->_ip = $_COOKIE['real_ipd'];
@@ -89,6 +91,8 @@ class cls_session
             $this->_ip = real_ip();
             setcookie("real_ipd", $this->_ip, time()+864000, $this->session_cookie_path);
         }
+
+        //echo $this->_ip;
         if ($session_id == '' && !empty($_COOKIE[$this->session_name]))
         {
             $this->session_id = $_COOKIE[$this->session_name];
@@ -97,12 +101,15 @@ class cls_session
         {
             $this->session_id = $session_id;
         }
-
-        if ($this->session_id)
+        //$this->getLastSesssionId();
+       // echo $this->session_id ;
+      if ($this->session_id)
         {
             $tmp_session_id = substr($this->session_id, 0, 32);
+           // echo $tmp_session_id."<br>";
             if ($this->gen_session_key($tmp_session_id) == substr($this->session_id, 32))
             {
+               //echo $tmp_session_id;
                 $this->session_id = $tmp_session_id;
             }
             else
@@ -115,12 +122,13 @@ class cls_session
 
         if ($this->session_id)
         {
+
             $this->load_session();
         }
         else
         {
-            $this->gen_session_id();
 
+            $this->gen_session_id();
             setcookie($this->session_name, $this->session_id . $this->gen_session_key($this->session_id), time()+86400*30, $this->session_cookie_path, $this->session_cookie_domain, $this->session_cookie_secure);
         }
 
@@ -130,7 +138,6 @@ class cls_session
     function gen_session_id()
     {
         $this->session_id = md5(uniqid(mt_rand(), true));
-
         return $this->insert_session();
     }
 
@@ -297,6 +304,17 @@ class cls_session
     function get_users_count()
     {
         return $this->db->getOne('SELECT count(*) FROM ' . $this->session_table);
+    }
+    function getLastSesssionId(){
+       if(isset($_COOKIE['ECS']['user_id'])&&!empty($_COOKIE['ECS']['user_id'])){
+            $session = $this->db->getRow('SELECT sesskey,userid, adminid, user_name, user_rank, discount, email, data, expiry FROM ' . $this->session_table . " WHERE userid = " . $_COOKIE['ECS']['user_id']. " ORDER BY expiry desc");
+            if($session) {
+                //echo $session['sesskey'];
+                $this->session_id = $session['sesskey'];
+                return $session['sesskey'];
+           }
+
+       }
     }
 }
 

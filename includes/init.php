@@ -150,11 +150,11 @@ if (is_spider())
 if (!defined('INIT_NO_USERS'))
 {
     /* 初始化session */
+
     include(ROOT_PATH . 'includes/cls_session.php');
-
     $sess = new cls_session($db, $ecs->table('sessions'), $ecs->table('sessions_data'));
-
     define('SESS_ID', $sess->get_session_id());
+  
 }
 if(isset($_SERVER['PHP_SELF']))
 {

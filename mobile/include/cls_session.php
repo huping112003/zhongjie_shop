@@ -81,14 +81,14 @@ class cls_session
         $this->db  = &$db;
 		//$this->_ip = real_ip();以下代码解决登陆问题
         if(isset($_COOKIE['real_ipd']) && !empty($_COOKIE['real_ipd']))
-  {
-             $this->_ip = $_COOKIE['real_ipd'];
-  }
-  else
-  {
-    $this->_ip = real_ip();
-    setcookie("real_ipd", $this->_ip, time()+36000, $this->session_cookie_path);
-  }
+        {
+            $this->_ip = $_COOKIE['real_ipd'];
+        }
+        else
+        {
+            $this->_ip = real_ip();
+            setcookie("real_ipd", $this->_ip, time()+36000, $this->session_cookie_path);
+        }
 
         if ($session_id == '' && !empty($_COOKIE[$this->session_name]))
         {

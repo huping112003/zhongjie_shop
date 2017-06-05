@@ -859,13 +859,18 @@ function get_order_sn()
  */
 function cart_goods($type = CART_GENERAL_GOODS)
 {
+    //if($_SESSION['user_id']){
+       // $where = ' WHERE user_id ='.$_SESSION['user_id'];
+    //}else{
+       $where  ="WHERE session_id = '" . SESS_ID . "'";
+   // }
 	$sql = "SELECT c.rec_id, c.user_id, c.goods_id, c.goods_name, g.goods_thumb,c.goods_sn, c.goods_number, " .
 			"c.market_price, c.goods_price, c.goods_attr, c.is_real, c.extension_code, c.parent_id, c.is_gift, c.is_shipping, " .
 			"c.goods_price * c.goods_number AS subtotal " .
 			"FROM " . $GLOBALS['ecs']->table('cart') . ' AS c ' .
 			' LEFT JOIN ' . $GLOBALS['ecs']->table('goods') . ' AS g ON g.goods_id = c.goods_id ' .
-			" WHERE session_id = '" . SESS_ID . "' " .
-			"AND rec_type = '$type'";
+			 $where.
+			" AND rec_type = '$type'";
 			
 	$arr = $GLOBALS['db']->getAll($sql);
 
@@ -1971,10 +1976,18 @@ function get_cart_goods()
     );
 
     /* 循环、统计 */
-    $sql = "SELECT *, IF(parent_id, parent_id, goods_id) AS pid " .
+   // if($_SESSION['user_id']){
+       /* $sql = "SELECT *, IF(parent_id, parent_id, goods_id) AS pid " .
+            " FROM " . $GLOBALS['ecs']->table('cart') . " " .
+            " WHERE user_id = " . $_SESSION['user_id'] . " AND rec_type = '" . CART_GENERAL_GOODS . "'" .
+            " ORDER BY pid, parent_id";
+       */
+    //}else{
+        $sql = "SELECT *, IF(parent_id, parent_id, goods_id) AS pid " .
             " FROM " . $GLOBALS['ecs']->table('cart') . " " .
             " WHERE session_id = '" . SESS_ID . "' AND rec_type = '" . CART_GENERAL_GOODS . "'" .
             " ORDER BY pid, parent_id";
+   // }
     $res = $GLOBALS['db']->query($sql);
 
     /* 用于统计购物车中实体商品和虚拟商品的个数 */
