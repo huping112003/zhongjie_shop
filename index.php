@@ -16,6 +16,7 @@
 define('IN_ECS', true);
 
 require(dirname(__FILE__) . '/includes/init.php');
+header('Content-type: text/html;charset=utf-8');
 
 if ((DEBUG_MODE & 2) != 2)
 {
@@ -103,10 +104,11 @@ if ($act == 'cat_rec')
 /*------------------------------------------------------ */
 //-- 判断是否存在缓存，如果存在则调用缓存，反之读取相应内容
 /*------------------------------------------------------ */
+$is_login = !empty($_SESSION['user_name'])?1:0;
 /* 缓存编号 */
-$cache_id = sprintf('%X', crc32($_SESSION['user_rank'] . '-' . $_CFG['lang']));
+$cache_id = sprintf('%X', crc32($_SESSION['user_rank'] . '-' . $_CFG['lang'].$is_login));
 
-if (!$smarty->is_cached('index.dwt', $cache_id))
+if (!$smarty->is_cached('index1.dwt', $cache_id))
 {
     assign_template();
 
@@ -196,7 +198,9 @@ if (!$smarty->is_cached('index.dwt', $cache_id))
         }
         $smarty->assign('cat_rec', $cat_rec);
     }
-
+    $sales_goods = get_cat_id_goods_list(8,8);//获取特价商品信息
+    //print_r($sales_goods);
+    $smarty->assign('sales_goods',$sales_goods);
     /* 页面中的动态内容 */
     assign_dynamic('index');
     $sql = 'select title,content,article_id from ' . $ecs->table("article") . ' where title="公司简介" ';
@@ -206,9 +210,10 @@ if (!$smarty->is_cached('index.dwt', $cache_id))
     $smarty->assign('company_article',$company_article);
     $smarty->assign('enabled_mes_captcha', (intval($_CFG['captcha']) & CAPTCHA_MESSAGE));
 
+
 }
 
-$smarty->display('index.dwt', $cache_id);
+$smarty->display('index1.dwt', $cache_id);
 
 /*------------------------------------------------------ */
 //-- PRIVATE FUNCTIONS

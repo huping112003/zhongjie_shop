@@ -12,15 +12,50 @@
     <link href="css/skeleton.css" rel="stylesheet" type="text/css" >
     <link href="css/pintuer.css" rel="stylesheet" type="text/css" >
     <link href="css/flexslider.css" rel="stylesheet" type="text/css" >
-    {insert_scripts files='luntai/jquery-1.8.3.min.js,luntai/jquery.easing.1.3.js,luntai/pintuer.js'}
+     <link href="css/good_list.css" rel="stylesheet" type="text/css" >
 
-    {insert_scripts files='common.js,index.js'}
+    {insert_scripts files='luntai/pintuer.js'}
+    {insert_scripts files='jquery-1.9.1.min.js,jquery.json.js,common.js,global.js,easydialog.min.js,compare.js'}
+    {insert_scripts files='transport_jquery.js,jquery.json.js,common.js,index.js,good_list.js'}
 </head>
 
 <body>
 {insert_scripts files='xiaomi_index.js,jquery.SuperSlide.js'}
 <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
-<!-- #BeginLibraryItem "/library/index_ad.lbi" --><!-- #EndLibraryItem -->
+<div class='index_branner'>
+    <div class="branner">
+        <!-- #BeginLibraryItem "/library/index_ad.lbi" --><!-- #EndLibraryItem -->
+    </div>
+    <div style="float:left">
+        <div class="login-header" style="margin-top:30px;" >
+             <h3 >中杰账号登录</h3>
+         </div>
+        <div class="login_body">
+            {if $smarty.session.user_id gt 0}
+                  hi 欢迎来到中杰轮胎{$smarty.session.user_name}/<a href="user.php?act=logout" target="_blank">退出</a>
+            {else}
+
+                   <form  id="ECS_LOGINFORM" name="ECS_LOGINFORM" action="user.php" method="post" onsubmit="javascript:signIn()">
+                        <div class="loginbox">
+                           <label><input type="text" name="username" placeholder="请输入你的用户名" class="logintxt"></label>
+                           <label><input type="password" name="password" placeholder="请输入密码" class="logintxt"></label>
+                              <label>
+                              <input type="text" name="captcha" placeholder="图片验证" class="logintxt2">
+                              <span>
+                                  <img src="captcha.php?is_login=1&amp;1290896243" alt="captcha" class="code-img" onclick="this.src='captcha.php?is_login=1&amp;'+Math.random()" style="width:140px;height:50px;">
+                              </span>
+                           </label>
+                                        <input type="hidden" name="act" value="act_login">
+                           <input type="hidden" name="back_act" value="http://zhongjie_shop.ecshop.com/index1.php">
+                           <label><input type="button" name="submit" value="登录" class="loginbtn us_Submit" onclick="javascript:signIn()"></label>
+                        </div>
+                  </form>
+            {/if}
+         </div>
+    </div>
+
+
+</div>
 
 <!-- main1 -->
     <div class="cub-main main1">
@@ -54,74 +89,57 @@
             </div>
         </div>
     </div>
+    <div class="containerone" style="margin:20px 0 75px">
 
-    <div class="cub-main main2">
-        <div class="info"><a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6IlA2Y2ludCI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0NzgxMDc5Mjc7fQ=="></a></div>
-        <div class="info2">
-            <div class="link">
-                <a target="_blank" class="brand" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6IlA2Y2ludCI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0NzgxMDc5Mjc7fQ==">&nbsp;</a>
-                <div class="attr">
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6IlA3Y2ludCI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0NzgxMDc5ODc7fQ==">&nbsp;</a>
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6IlAgWkVSTyI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0NzgxMDgwNDQ7fQ==">&nbsp;</a>
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6IkRSR05TUCI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0NzgxMDgxNjg7fQ==">&nbsp;</a>
+        <div class="main">
+            <span class="index_hot">热销商品&nbsp;&nbsp;》》</span>
+            <ul class="produc-detail" style='padding-left:0px;margin-top:20px;'>
+            <!--{foreach from=$sales_goods item=goods}-->
+            <!-- {if $goods.goods_id} -->
+            <li>
+                <a href="{$goods.url}" target="_blank">
+                    <div class="proimg"><img src="{$goods.goods_thumb}"></div>
+                    <div class="producfont"><span>{$goods.name}</span></div>
+                 </a>
+                <div class="price">
+                    {if $smarty.session.user_id gt 0}
+                        <span style='float:left' class="price_list">￥{$goods.shop_price}</span>
+                    {else}
+                        <span style='float:left;width:70px;' class="price_list">&nbsp</span>
+                    {/if}
+                    <div class="skunum gbd addcart" id="skunum{$goods.goods_id}">
+                        <span class="minus" title="减少1个数量"></span>
+                        <input id="number" name="number" type="text" min="1" value="1" onchange="countNum(0,{$goods.goods_id})" style="height:30px">
+                        <span class="add" title="增加1个数量" ></span>
+                        <span style="display:none" class="cart_id">{$goods.goods_id}</span>
+                    </div>
                 </div>
-            </div>
+
+                <a class="btn-buy J_buyGoods addTocarts btn-primary" href="javascript:addToCartList({$goods.goods_id})" style="bottom:1px;height:35px;">
+                    <span class="addtocart_text">加入购物车</span>
+                </a>
+            </li>
+            <!-- {/if} -->
+            <!-- {/foreach} -->
+
+            </ul>
+
+            <span class="index_hot_bottom"><a href='/category.php?id=8'>更多特价商品 &nbsp;》》</a></span>
         </div>
-    </div>
-    <div class="cub-main main3">
-        <div class="info"><a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6IlRFQ0hOTyI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0NzgxMDgxOTQ7fQ=="></a></div>
-        <div class="info2">
-            <div class="link">
-                <a target="_blank" class="brand" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6IlRFQ0hOTyI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0NzgxMDgxOTQ7fQ==">&nbsp;</a>
-                <div class="attr">
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjk6IkgvUCBTUE9SVCI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0NzgxMDgyMjA7fQ==">&nbsp;</a>
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjU6IkVQODUwIjtzOjE4OiJzZWFyY2hfZW5jb2RlX3RpbWUiO2k6MTQ3ODEwODI0Mjt9">&nbsp;</a>
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjU6IkVSMzAwIjtzOjE4OiJzZWFyY2hfZW5jb2RlX3RpbWUiO2k6MTQ3ODEwODI3Njt9">&nbsp;</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="cub-main main4">
-        <div class="info"><a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjQ6IkFHMDEiO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxNDc4MTA4MzA4O30="></a></div>
-        <div class="info2">
-            <div class="link">
-                <a target="_blank" class="brand" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjQ6IkFHMDEiO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxNDc4MTA4MzA4O30=">&nbsp;</a>
-                <div class="attr">
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjQ6IkFVMDIiO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxNDc4MTA4MzMxO30=">&nbsp;</a>
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjQ6IkFHMDIiO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxNDc4MTA4MzYxO30=">&nbsp;</a>
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjQ6IkFIMDEiO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxNDc4MTA4NDI3O30=">&nbsp;</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="cub-main main5">
-        <div class="info"><a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjU6IlMyMDArIjtzOjE4OiJzZWFyY2hfZW5jb2RlX3RpbWUiO2k6MTQ3ODY3MzExMjt9"></a></div>
-        <div class="info2">
-            <div class="link">
-                <a target="_blank" class="brand" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjU6IlMyMDArIjtzOjE4OiJzZWFyY2hfZW5jb2RlX3RpbWUiO2k6MTQ3ODY3MzExMjt9">&nbsp;</a>
-                <div class="attr">
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjQ6IlMyMDAiO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxNDc4NjczMjg0O30=">&nbsp;</a>
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjQ6IkQyMDAiO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxNDc4NjczMzI1O30=">&nbsp;</a>
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjQ6IlMyMDEiO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxNDc4NjczMzg3O30=">&nbsp;</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="cub-main main6">
-        <div class="info"><a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjQ6ImgyMjAiO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxNDc5Mjk2NzgxO30="></a></div>
-        <div class="info2">
-            <div class="link">
-                <a target="_blank" class="brand" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjQ6ImgyMjAiO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxNDc5Mjk2NzgxO30=">&nbsp;</a>
-                <div class="attr">
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjU6InNhMzAyIjtzOjE4OiJzZWFyY2hfZW5jb2RlX3RpbWUiO2k6MTQ3OTI5Njg2MTt9">&nbsp;</a>
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjU6InNsMTA2IjtzOjE4OiJzZWFyY2hfZW5jb2RlX3RpbWUiO2k6MTQ3OTI5Njg5OTt9">&nbsp;</a>
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6InRheGkgMSI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0NzkyOTY5NDE7fQ==">&nbsp;</a>
-                </div>
-            </div>
-        </div>
-    </div>
+      </div>
 
 
+
+<!-- container end -->
+<div class="add_ok" id="cart_show">
+    <div class="tip">
+        <i class="iconfont"> </i>商品已成功加入购物车
+    </div>
+    <div class="go">
+        <a href="javascript:easyDialog.close();" class="back">&lt;&lt;继续购物</a>
+        <a href="flow.php" class="btn">去结算</a>
+    </div>
+</div>
 
  <!-- footer start -->
 <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
