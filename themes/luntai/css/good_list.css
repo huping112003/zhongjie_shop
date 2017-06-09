@@ -167,3 +167,13 @@
     font-size: 12px;
     line-height: 22px;
 }
+.index_hot{
+    margin-bottom:20px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.index_hot_bottom{
+    font-size: 18px;
+    font-weight: bold;
+    float:right;
+}

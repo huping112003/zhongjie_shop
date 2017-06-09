@@ -89,9 +89,11 @@
             </div>
         </div>
     </div>
-    <div class="containerone">
+    <div class="containerone" style="margin:20px 0 75px">
+
         <div class="main">
-            <ul class="produc-detail" style='padding-left:0px;'>
+            <span class="index_hot">热销商品&nbsp;&nbsp;》》</span>
+            <ul class="produc-detail" style='padding-left:0px;margin-top:20px;'>
             <!--{foreach from=$sales_goods item=goods}-->
             <!-- {if $goods.goods_id} -->
             <li>
@@ -120,77 +122,13 @@
             <!-- {/if} -->
             <!-- {/foreach} -->
 
-                                   </ul>
+            </ul>
 
-
+            <span class="index_hot_bottom"><a href='/category.php?id=8'>更多特价商品 &nbsp;》》</a></span>
         </div>
       </div>
 
-    <div class="cub-main main2">
-        <div class="info"><a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6IlA2Y2ludCI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0NzgxMDc5Mjc7fQ=="></a></div>
-        <div class="info2">
-            <div class="link">
-                <a target="_blank" class="brand" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6IlA2Y2ludCI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0NzgxMDc5Mjc7fQ==">&nbsp;</a>
-                <div class="attr">
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6IlA3Y2ludCI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0NzgxMDc5ODc7fQ==">&nbsp;</a>
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6IlAgWkVSTyI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0NzgxMDgwNDQ7fQ==">&nbsp;</a>
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6IkRSR05TUCI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0NzgxMDgxNjg7fQ==">&nbsp;</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="cub-main main3">
-        <div class="info"><a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6IlRFQ0hOTyI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0NzgxMDgxOTQ7fQ=="></a></div>
-        <div class="info2">
-            <div class="link">
-                <a target="_blank" class="brand" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6IlRFQ0hOTyI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0NzgxMDgxOTQ7fQ==">&nbsp;</a>
-                <div class="attr">
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjk6IkgvUCBTUE9SVCI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0NzgxMDgyMjA7fQ==">&nbsp;</a>
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjU6IkVQODUwIjtzOjE4OiJzZWFyY2hfZW5jb2RlX3RpbWUiO2k6MTQ3ODEwODI0Mjt9">&nbsp;</a>
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjU6IkVSMzAwIjtzOjE4OiJzZWFyY2hfZW5jb2RlX3RpbWUiO2k6MTQ3ODEwODI3Njt9">&nbsp;</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="cub-main main4">
-        <div class="info"><a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjQ6IkFHMDEiO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxNDc4MTA4MzA4O30="></a></div>
-        <div class="info2">
-            <div class="link">
-                <a target="_blank" class="brand" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjQ6IkFHMDEiO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxNDc4MTA4MzA4O30=">&nbsp;</a>
-                <div class="attr">
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjQ6IkFVMDIiO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxNDc4MTA4MzMxO30=">&nbsp;</a>
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjQ6IkFHMDIiO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxNDc4MTA4MzYxO30=">&nbsp;</a>
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjQ6IkFIMDEiO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxNDc4MTA4NDI3O30=">&nbsp;</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="cub-main main5">
-        <div class="info"><a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjU6IlMyMDArIjtzOjE4OiJzZWFyY2hfZW5jb2RlX3RpbWUiO2k6MTQ3ODY3MzExMjt9"></a></div>
-        <div class="info2">
-            <div class="link">
-                <a target="_blank" class="brand" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjU6IlMyMDArIjtzOjE4OiJzZWFyY2hfZW5jb2RlX3RpbWUiO2k6MTQ3ODY3MzExMjt9">&nbsp;</a>
-                <div class="attr">
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjQ6IlMyMDAiO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxNDc4NjczMjg0O30=">&nbsp;</a>
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjQ6IkQyMDAiO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxNDc4NjczMzI1O30=">&nbsp;</a>
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjQ6IlMyMDEiO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxNDc4NjczMzg3O30=">&nbsp;</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="cub-main main6">
-        <div class="info"><a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjQ6ImgyMjAiO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxNDc5Mjk2NzgxO30="></a></div>
-        <div class="info2">
-            <div class="link">
-                <a target="_blank" class="brand" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjQ6ImgyMjAiO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxNDc5Mjk2NzgxO30=">&nbsp;</a>
-                <div class="attr">
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjU6InNhMzAyIjtzOjE4OiJzZWFyY2hfZW5jb2RlX3RpbWUiO2k6MTQ3OTI5Njg2MTt9">&nbsp;</a>
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjU6InNsMTA2IjtzOjE4OiJzZWFyY2hfZW5jb2RlX3RpbWUiO2k6MTQ3OTI5Njg5OTt9">&nbsp;</a>
-                    <a target="_blank" href="search.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6InRheGkgMSI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0NzkyOTY5NDE7fQ==">&nbsp;</a>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
 <!-- container end -->
 <div class="add_ok" id="cart_show">
