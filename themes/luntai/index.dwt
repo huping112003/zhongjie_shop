@@ -33,6 +33,12 @@
         <div class="login_body">
             {if $smarty.session.user_id gt 0}
                   hi 欢迎来到中杰轮胎{$smarty.session.user_name}/<a href="user.php?act=logout" target="_blank">退出</a>
+                  <div style="margin-top:30px;margin-bottom:35px">
+                      <img src="images/login_logo.png">
+                  </div>
+                  <div class="index_login_tel">
+                      客服热线：400 000 6568
+                  </div>
             {else}
 
                    <form  id="ECS_LOGINFORM" name="ECS_LOGINFORM" action="user.php" method="post" onsubmit="javascript:signIn()">
@@ -45,7 +51,7 @@
                                   <img src="captcha.php?is_login=1&amp;1290896243" alt="captcha" class="code-img" onclick="this.src='captcha.php?is_login=1&amp;'+Math.random()" style="width:140px;height:50px;">
                               </span>
                            </label>
-                                        <input type="hidden" name="act" value="act_login">
+                           <input type="hidden" name="act" value="act_login">
                            <input type="hidden" name="back_act" value="http://zhongjie_shop.ecshop.com/index1.php">
                            <label><input type="button" name="submit" value="登录" class="loginbtn us_Submit" onclick="javascript:signIn()"></label>
                         </div>
