@@ -213,7 +213,7 @@ if (!$smarty->is_cached('index1.dwt', $cache_id))
 
 }
 
-$smarty->display('index1.dwt', $cache_id);
+$smarty->display('index.dwt', $cache_id);
 
 /*------------------------------------------------------ */
 //-- PRIVATE FUNCTIONS
