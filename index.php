@@ -108,7 +108,7 @@ $is_login = !empty($_SESSION['user_name'])?1:0;
 /* 缓存编号 */
 $cache_id = sprintf('%X', crc32($_SESSION['user_rank'] . '-' . $_CFG['lang'].$is_login));
 
-if (!$smarty->is_cached('index1.dwt', $cache_id))
+if (!$smarty->is_cached('index.dwt', $cache_id))
 {
     assign_template();
 

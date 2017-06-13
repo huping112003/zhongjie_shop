@@ -3,7 +3,7 @@
 /**
  * ECSHOP 模版类
  * ============================================================================
- 
+
  * 网站地址: http://www.cub168.com；
  * ----------------------------------------------------------------------------
  * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
@@ -292,13 +292,19 @@ class cls_template
             {
                 $source = str_replace($sp_match[1][$curr_sp],'%%%SMARTYSP'.$curr_sp.'%%%',$source);
             }
-             for ($curr_sp = 0, $for_max2 = count($sp_match[1]); $curr_sp < $for_max2; $curr_sp++)
+            for ($curr_sp = 0, $for_max2 = count($sp_match[1]); $curr_sp < $for_max2; $curr_sp++)
             {
-                 $source= str_replace('%%%SMARTYSP'.$curr_sp.'%%%', '<?php echo \''.str_replace("'", "\'", $sp_match[1][$curr_sp]).'\'; ?>'."\n", $source);
+                $source= str_replace('%%%SMARTYSP'.$curr_sp.'%%%', '<?php echo \''.str_replace("'", "\'", $sp_match[1][$curr_sp]).'\'; ?>'."\n", $source);
             }
-         }
-         //return preg_replace("/{([^\}\{\n]*)}/e", "\$this->select('\\1');", $source);
-        return preg_replace_callback("/{([^\}\{\n]*)}/", function($r) { return $this->select($r[1]); }, $source);
+        }
+        //return preg_replace("/{([^\}\{\n]*)}/e", "\$this->select('\\1');", $source);
+        if (PHP_VERSION >= '5.5')
+        {
+            return preg_replace_callback("/{([^\}\{\n]*)}/", function($r) { return $this->select($r[1]); }, $source);
+        }else{
+            return preg_replace("/{([^\}\{\n]*)}/e", "\$this->select('\\1');", $source);
+        }
+
     }
 
     /**
@@ -492,7 +498,14 @@ class cls_template
                 case 'insert' :
                     $t = $this->get_para(substr($tag, 7), false);
 
-                    $out = "<?php " . '$k = ' . preg_replace_callback("/(\'\\$[^,] )/" , function($match){return stripslashes(trim($match[1],'\''));}, var_export($t, true)) . ";";
+                    if (PHP_VERSION >= '5.5')
+                    {
+                        // $out = "<?php " . '$k = ' . preg_replace_callback("/(\'\\$[^,] )/" , function($match){return stripslashes(trim($match[1],'\''));}, var_export($t, true)) . ";";
+                        //$out = "<?php " . '$k = ' . preg_replace_callback("/(\'\\$[^,] )/" , function($match){return stripslashes(trim($match[1],'\''));}, var_export($t, true)) . ";";
+                        $out = "<?php \n" . '$k = ' . preg_replace_callback("/(\'\\$[^,]+)/" , function($ro) use ($t) { return stripslashes(trim($ro[1],'\''));}, var_export($t, true)) . ";\n";
+                    }else{
+                        $out = "<?php \n" . '$k = ' . preg_replace("/(\'\\$[^,]+)/e" , "stripslashes(trim('\\1','\''));", var_export($t, true)) . ";\n";
+                    }
                     $out .= 'echo $this->_echash . $k[\'name\'] . \'|\' . serialize($k) . $this->_echash;' . "\n?>";
 
                     return $out;
@@ -551,7 +564,13 @@ class cls_template
     {
         if (strrpos($val, '[') !== false)
         {
-            $val = preg_replace("/\[([^\[\]]*)\]/eis", "'.'.str_replace('$','\$','\\1')", $val);
+
+            if (PHP_VERSION >= '5.5')
+            {
+                $val = preg_replace_callback('/\[([^\[\]]*)\]/is',function ($matches) {return '.'.str_replace('$','\$',$matches[1]);},$val);
+            }else{
+                $val = preg_replace("/\[([^\[\]]*)\]/eis", "'.'.str_replace('$','\$','\\1')", $val);
+            }
         }
 
         if (strrpos($val, '|') !== false)
@@ -677,7 +696,7 @@ class cls_template
             }
             if ($_var_name == 'smarty')
             {
-                 $p = $this->_compile_smarty_ref($t);
+                $p = $this->_compile_smarty_ref($t);
             }
             else
             {
@@ -1068,10 +1087,16 @@ class cls_template
         if ($file_type == '.dwt')
         {
             /* 将模板中所有library替换为链接 */
-            $pattern     = '/<!--\s#BeginLibraryItem\s\"\/(.*?)\"\s-->.*?<!--\s#EndLibraryItem\s-->/se';
+            $pattern     = '/<!--\s#BeginLibraryItem\s\"\/(.*?)\"\s-->.*?<!--\s#EndLibraryItem\s-->/s';
             $replacement = "'{include file='.strtolower('\\1'). '}'";
-            $source      = preg_replace($pattern, $replacement, $source);
-
+            // $source      = preg_replace($pattern, $replacement, $source);
+            if (PHP_VERSION >= '5.5')
+            {
+                $source = preg_replace_callback($pattern, function ($matches) { return '{include file='.strtolower($matches[1]). '}';},$source);
+                //$source      = preg_replace($pattern, $replacement, $source);
+            }else{
+                $source      = preg_replace($pattern, $replacement, $source);
+            }
             /* 检查有无动态库文件，如果有为其赋值 */
             $dyna_libs = get_dyna_libs($GLOBALS['_CFG']['template'], $this->_current_file);
             if ($dyna_libs)
@@ -1118,11 +1143,11 @@ class cls_template
         /**
          * 处理库文件
          */
-         elseif ($file_type == '.lbi')
-         {
+        elseif ($file_type == '.lbi')
+        {
             /* 去除meta */
             $source = preg_replace('/<meta\shttp-equiv=["|\']Content-Type["|\']\scontent=["|\']text\/html;\scharset=(?:.*?)["|\']>\r?\n?/i', '', $source);
-         }
+        }
 
         /* 替换文件编码头部 */
         if (strpos($source, "\xEF\xBB\xBF") !== FALSE)
@@ -1137,7 +1162,7 @@ class cls_template
             '/((?:background|src)\s*=\s*["|\'])(?:\.\/|\.\.\/)?(images\/.*?["|\'])/is', // 在images前加上 $tmp_dir
             '/((?:background|background-image):\s*?url\()(?:\.\/|\.\.\/)?(images\/)/is', // 在images前加上 $tmp_dir
             '/([\'|"])\.\.\//is', // 以../开头的路径全部修正为空
-            );
+        );
         $replace = array(
             '\1',
             '',
@@ -1145,7 +1170,7 @@ class cls_template
             '\1' . $tmp_dir . '\2',
             '\1' . $tmp_dir . '\2',
             '\1'
-            );
+        );
         return preg_replace($pattern, $replace, $source);
     }
 

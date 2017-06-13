@@ -16,7 +16,7 @@ if (!defined('IN_ECTOUCH')){
 
 //定义全局常量
 define('ROOT_PATH', str_replace('data/convention.php', '', str_replace('\\', '/', __FILE__)));
-
+//echo ROOT_PATH;
 //检测需要安装服务
 if (!file_exists(ROOT_PATH.'data/install.lock') && !stripos(getcwd(), 'install')){
     header('location: ./install/index.php');
@@ -25,6 +25,7 @@ if (!file_exists(ROOT_PATH.'data/install.lock') && !stripos(getcwd(), 'install')
 
 //全局数据库配置
 require(ROOT_PATH . '../data/config.php');
+
 $db_config = explode(':', $db_host);
 
 //时区设置
@@ -67,7 +68,7 @@ $config['HTML_CACHE_RULE']['index']['index'] = 3600; //缓存时间,单位：秒
 //数据库配置
 $config['DB_TYPE'] = 'mysql'; //数据库类型，一般不需要修改
 $config['DB_HOST'] = $db_config[0];//数据库主机，一般不需要修改
-$config['DB_PORT'] = $db_config[1];//数据库端口，mysql默认是3306，一般不需要修改
+$config['DB_PORT'] = isset($db_config[1])?$db_config[1]:3306;//数据库端口，mysql默认是3306，一般不需要修改
 $config['DB_USER'] = $db_user;//数据库用户名
 $config['DB_PWD'] = $db_pass;//数据库密码
 $config['DB_NAME'] = $db_name;//数据库名

@@ -83,8 +83,8 @@ function reg(str){
                                         {$goods.shop_price_formated}
                                       </b>
                                   {else}
-                                      <b class="nala_price red" id="">
-                                        ---
+                                      <b class="" id="">
+                                        登陆后查看价格
                                       </b>
                                   {/if}
                                   </span>
