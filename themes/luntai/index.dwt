@@ -107,7 +107,7 @@
                     <div class="proimg"><img src="{$goods.goods_thumb}"></div>
                     <div class="producfont"><span>{$goods.name}</span></div>
                  </a>
-                <div class="price">
+                <div class="price" style="margin-top:20px">
                     {if $smarty.session.user_id gt 0}
                         <span style='float:left' class="price_list">￥{$goods.shop_price}</span>
                     {else}

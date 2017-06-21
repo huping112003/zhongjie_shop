@@ -51,7 +51,7 @@
 
        <div class="header-search" style="float: left">
            <form action="search.php" method="get" id="searchForm" name="searchForm" onsubmit="return checkSearchForm()" class="search-form clearfix">
-               <input class="search-text" type="text" name="keywords" id="keyword" value="" autocomplete="off">
+               <input class="search-text" type="text" name="keywords" id="keyword" value="" autocomplete="off" style="font-size: 25px">
                <button type="submit" class="search-btn"></button>
            </form>
        </div>
