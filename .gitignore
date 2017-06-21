@@ -4,3 +4,5 @@ temp/
 data/config.php
 includes\cls_template.php
 /shanghai
+/mobile/data/caches
+/mobile/data/compiled

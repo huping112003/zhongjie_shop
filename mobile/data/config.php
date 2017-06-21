@@ -20,7 +20,7 @@ require(dirname(__FILE__) . '/convention.php');
 
 //��վȫ������
 $config['site_name'] = '�Ϻ��̴������Ƽ����޹�˾'; //վ������
-$config['site_url']="http://".$_SERVER['HTTP_HOST']."/shanghai/"; //���԰���ַ
+$config['site_url']="http://".$_SERVER['HTTP_HOST']."/"; //���԰���ַ
 $config['site_email'] = 'admin@cub168.com'; //����Ա����
 $config['site_phone'] = '021-68686868'; //��˾�绰
 $config['site_fax'] = '021-68686868-801'; //��������

@@ -1087,14 +1087,16 @@ class cls_template
         if ($file_type == '.dwt')
         {
             /* 将模板中所有library替换为链接 */
-            $pattern     = '/<!--\s#BeginLibraryItem\s\"\/(.*?)\"\s-->.*?<!--\s#EndLibraryItem\s-->/s';
+
             $replacement = "'{include file='.strtolower('\\1'). '}'";
             // $source      = preg_replace($pattern, $replacement, $source);
             if (PHP_VERSION >= '5.5')
             {
+                $pattern     = '/<!--\s#BeginLibraryItem\s\"\/(.*?)\"\s-->.*?<!--\s#EndLibraryItem\s-->/s';
                 $source = preg_replace_callback($pattern, function ($matches) { return '{include file='.strtolower($matches[1]). '}';},$source);
                 //$source      = preg_replace($pattern, $replacement, $source);
             }else{
+                $pattern     = '/<!--\s#BeginLibraryItem\s\"\/(.*?)\"\s-->.*?<!--\s#EndLibraryItem\s-->/se';
                 $source      = preg_replace($pattern, $replacement, $source);
             }
             /* 检查有无动态库文件，如果有为其赋值 */

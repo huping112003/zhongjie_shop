@@ -100,7 +100,6 @@
 
 			function change_goods_number_response(result)
 			{
-           
 				if (result.error == 0)
 				{
 				var rec_id = result.rec_id;

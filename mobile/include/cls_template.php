@@ -500,7 +500,7 @@ class cls_template
 
                     if (PHP_VERSION >= '5.5')
                     {
-                       // $out = "<?php " . '$k = ' . preg_replace_callback("/(\'\\$[^,] )/" , function($match){return stripslashes(trim($match[1],'\''));}, var_export($t, true)) . ";";
+                        // $out = "<?php " . '$k = ' . preg_replace_callback("/(\'\\$[^,] )/" , function($match){return stripslashes(trim($match[1],'\''));}, var_export($t, true)) . ";";
                         //$out = "<?php " . '$k = ' . preg_replace_callback("/(\'\\$[^,] )/" , function($match){return stripslashes(trim($match[1],'\''));}, var_export($t, true)) . ";";
                         $out = "<?php \n" . '$k = ' . preg_replace_callback("/(\'\\$[^,]+)/" , function($ro) use ($t) { return stripslashes(trim($ro[1],'\''));}, var_export($t, true)) . ";\n";
                     }else{
@@ -1068,7 +1068,7 @@ class cls_template
                 }
                 else
                 {
-                    $str .= '<script type="text/javascript" src="js/' . $val . '"></script>';
+                    $str .= '<script type="text/javascript" src="data/static/js/' . $val . '"></script>';
                 }
             }
         }
@@ -1087,14 +1087,16 @@ class cls_template
         if ($file_type == '.dwt')
         {
             /* 将模板中所有library替换为链接 */
-            $pattern     = '/<!--\s#BeginLibraryItem\s\"\/(.*?)\"\s-->.*?<!--\s#EndLibraryItem\s-->/s';
+
             $replacement = "'{include file='.strtolower('\\1'). '}'";
-           // $source      = preg_replace($pattern, $replacement, $source);
+            // $source      = preg_replace($pattern, $replacement, $source);
             if (PHP_VERSION >= '5.5')
             {
+                $pattern     = '/<!--\s#BeginLibraryItem\s\"\/(.*?)\"\s-->.*?<!--\s#EndLibraryItem\s-->/s';
                 $source = preg_replace_callback($pattern, function ($matches) { return '{include file='.strtolower($matches[1]). '}';},$source);
                 //$source      = preg_replace($pattern, $replacement, $source);
             }else{
+                $pattern     = '/<!--\s#BeginLibraryItem\s\"\/(.*?)\"\s-->.*?<!--\s#EndLibraryItem\s-->/se';
                 $source      = preg_replace($pattern, $replacement, $source);
             }
             /* 检查有无动态库文件，如果有为其赋值 */
