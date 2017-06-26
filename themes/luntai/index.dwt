@@ -87,7 +87,7 @@
                               </span>
                            </label>
                            <input type="hidden" name="act" value="act_login">
-                           <input type="hidden" name="back_act" value="http://zhongjie_shop.ecshop.com/index1.php">
+                           <input type="hidden" name="back_act" value="index.php">
                            <label><input type="button" name="submit" value="登录" class="loginbtn us_Submit" onclick="javascript:signIn()"></label>
                         </div>
                   </form>

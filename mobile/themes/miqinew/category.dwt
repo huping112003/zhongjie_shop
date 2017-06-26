@@ -148,23 +148,23 @@
 }
 </style>
 <!-- <script type="text/javascript" src="{$ectouch_themes}/js/jquery.min.js"></script> -->
-<script type="text/javascript" src="http://www.zhongjiesh.com/shanghai/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="http://www.zhongjiesh.com/shanghai/js/jquery.json.js"></script>
-<script type="text/javascript" src="http://www.zhongjiesh.com/shanghai/js/common.js"></script>
-<script type="text/javascript" src="http://www.zhongjiesh.com/shanghai/js/global.js"></script>
-<script type="text/javascript" src="http://www.zhongjiesh.com/shanghai/js/easydialog.min.js"></script>
-<script type="text/javascript" src="http://www.zhongjiesh.com/shanghai/js/compare.js"></script>
-<script type="text/javascript" src="http://www.zhongjiesh.com/shanghai/js/transport_jquery.js"></script>
-<script type="text/javascript" src="http://www.zhongjiesh.com/shanghai/js/jquery.SuperSlide.js"></script>
-<script type="text/javascript" src="http://www.zhongjiesh.com/shanghai/js/xiaomi_common.js"></script>
-<script type="text/javascript" src="http://www.zhongjiesh.com/shanghai/js/xiaomi_category.js"></script>
-<script type="text/javascript" src="http://www.zhongjiesh.com/shanghai/js/xiaomi_category.js"></script>
+<script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery.json.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript" src="/js/global.js"></script>
+<script type="text/javascript" src="/js/easydialog.min.js"></script>
+<script type="text/javascript" src="/js/compare.js"></script>
+<script type="text/javascript" src="/js/transport_jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.SuperSlide.js"></script>
+<script type="text/javascript" src="/js/xiaomi_common.js"></script>
+<script type="text/javascript" src="/js/xiaomi_category.js"></script>
+<script type="text/javascript" src="/js/xiaomi_category.js"></script>
 <script type="text/javascript" src="{$ectouch_themes}/js/jquery.more.js"></script>
 <!-- <script type="text/javascript" src="{$ectouch_themes}/js/jquery.more.js"></script>
 <script type="text/javascript" src="{$ectouch_themes}/js/ectouch.js"></script>
 <script type="text/javascript" src="{$ectouch_themes}/../../data/static/js/common.js"></script>
 <script type="text/javascript" src="{$ectouch_themes}/../../data/static/js/transport.js"></script>
-<script type="text/javascript" src="http://www.zhongjiesh.com/shanghai/mobile/data/static/js/common.js"></script> -->
+<script type="text/javascript" src="/mobile/data/static/js/common.js"></script> -->
 <script type="text/javascript">
 jQuery(function($){
 	$('#J_ItemList').more({'address': 'category.php?act=asynclist&category={$category}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort={$pager.sort}&order={$pager.order}', 'spinner_code':'<div style="text-align:center; margin:10px;"><img src="{$ectouch_themes}/images/loader.gif" /></div>'})
